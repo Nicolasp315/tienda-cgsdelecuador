@@ -1,9 +1,101 @@
 [
-  {
-    "id": 1,
-    "nombre": "Bioestimulante Foliar",
-    "categoria": "Cultivos",
-    "descripcion": "Mejora el desarrollo foliar y la resistencia al estrés.",
-    "imagen": "https://i.imgur.com/ejemplo.jpg"
-  }
+    {
+        "Categoria": "Hogar",
+        "Descripcion": "Jardincorplus",
+        "Detalle Adicional": "Centrado en macetas y jardines",
+        "Foto": "",
+        "ID": "JAR-001",
+        "PVP": "$49.00",
+        "Presentacion": "4 ltrs"
+    },
+    {
+        "Categoria": "Cultivos",
+        "Descripcion": "Bioscorplus",
+        "Detalle Adicional": "Fórmula especial de Inicio",
+        "Foto": "https://i.imgur.com/rvjJJIL.jpeg",
+        "ID": "BIO-001",
+        "PVP": "$205.00",
+        "Presentacion": "20 ltrs"
+    },
+    {
+        "Categoria": "Cultivos",
+        "Descripcion": "Insecticorplus",
+        "Detalle Adicional": null,
+        "Foto": "",
+        "ID": "INS-001",
+        "PVP": "$405.00",
+        "Presentacion": "20 ltrs"
+    },
+    {
+        "Categoria": "Cultivos",
+        "Descripcion": "Fungicorplus",
+        "Detalle Adicional": "Fórmula especial de Fungicida más Bioestimulante",
+        "Foto": "",
+        "ID": "FUN-001",
+        "PVP": "$405.00",
+        "Presentacion": "20 ltrs"
+    },
+    {
+        "Categoria": "Cultivos",
+        "Descripcion": "Specialcorplus",
+        "Detalle Adicional": null,
+        "Foto": "",
+        "ID": "SPC-001",
+        "PVP": "$405.00",
+        "Presentacion": "20 ltrs"
+    },
+    {
+        "Categoria": "Cultivos",
+        "Descripcion": "Complexcorplus",
+        "Detalle Adicional": null,
+        "Foto": "",
+        "ID": "COM-001",
+        "PVP": "$405.00",
+        "Presentacion": "20 ltrs"
+    },
+    {
+        "Categoria": "Cultivos",
+        "Descripcion": "Humicorplus",
+        "Detalle Adicional": "Fórmula especial para Acondicionar suelo y Raíces",
+        "Foto": "https://i.imgur.com/aINfMZ6.jpeg",
+        "ID": "HUM-001",
+        "PVP": "$255.00",
+        "Presentacion": "20 ltrs"
+    },
+    {
+        "Categoria": "Cultivos",
+        "Descripcion": "Calciocorplus",
+        "Detalle Adicional": "Fórmula especial de Nitrato de Calcio líquido",
+        "Foto": "",
+        "ID": "CAL-002",
+        "PVP": "$255.00",
+        "Presentacion": "20 ltrs"
+    },
+    {
+        "Categoria": "Cultivos",
+        "Descripcion": "Calcioborcoplus",
+        "Detalle Adicional": "Fórmula especial Floración y Cuaje",
+        "Foto": "",
+        "ID": "CAL-003",
+        "PVP": "$255.00",
+        "Presentacion": "20 ltrs"
+    },
+    {
+        "Categoria": "Cultivos",
+        "Descripcion": "Algascorplus",
+        "Detalle Adicional": "Fórmula especial de Desarrollo",
+        "Foto": "https://i.imgur.com/gCal47w.jpeg",
+        "ID": "ALG-001",
+        "PVP": "$205.00",
+        "Presentacion": "20 ltrs"
+    },
+    {
+        "Categoria": "Cultivos",
+        "Descripcion": "NITRATO DE CALCIO",
+        "Detalle Adicional": null,
+        "Foto": null,
+        "ID": "CAL-001",
+        "PVP": "$12.00",
+        "Presentacion": "25 Kg"
+    }
 ]
