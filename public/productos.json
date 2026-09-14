@@ -1,101 +1,37 @@
 [
     {
-        "categoria": "Hogar",
-        "nombre": "Jardincorplus",
-        "descripcion": "Centrado en macetas y jardines",
-        "imagen": "",
-        "id": "JAR-001",
-        "PVP": "$49.00",
-        "Presentacion": "4 ltrs"
-    },
-    {
-        "categoria": "Cultivos",
+        "rowId": "BIO-001",
         "nombre": "Bioscorplus",
-        "descripcion": "Fórmula especial de Inicio",
+        "categoria": "Cultivos",
+        "detalleAdicional": "Fórmula especial de Inicio",
         "imagen": "https://i.imgur.com/rvjJJIL.jpeg",
-        "id": "BIO-001",
-        "PVP": "$205.00",
-        "Presentacion": "20 ltrs"
+        "presentacion": "20 ltrs"
     },
+
     {
-        "categoria": "Cultivos",
-        "nombre": "Insecticorplus",
-        "descripcion": null,
-        "imagen": "",
-        "id": "INS-001",
-        "PVP": "$405.00",
-        "Presentacion": "20 ltrs"
-    },
-    {
-        "categoria": "Cultivos",
-        "nombre": "Fungicorplus",
-        "descripcion": "Fórmula especial de Fungicida más Bioestimulante",
-        "imagen": "",
-        "id": "FUN-001",
-        "PVP": "$405.00",
-        "Presentacion": "20 ltrs"
-    },
-    {
-        "categoria": "Cultivos",
-        "nombre": "Specialcorplus",
-        "descripcion": null,
-        "imagen": "",
-        "id": "SPC-001",
-        "PVP": "$405.00",
-        "Presentacion": "20 ltrs"
-    },
-    {
-        "categoria": "Cultivos",
-        "nombre": "Complexcorplus",
-        "descripcion": null,
-        "imagen": "",
-        "id": "COM-001",
-        "PVP": "$405.00",
-        "Presentacion": "20 ltrs"
-    },
-    {
-        "categoria": "Cultivos",
+        "rowId": "HUM-001",
         "nombre": "Humicorplus",
-        "descripcion": "Fórmula especial para Acondicionar suelo y Raíces",
+        "categoria": "Cultivos",
+        "detalleAdicional": "Fórmula especial para Acondicionar suelo y Raíces",
         "imagen": "https://i.imgur.com/aINfMZ6.jpeg",
-        "id": "HUM-001",
-        "PVP": "$255.00",
-        "Presentacion": "20 ltrs"
+        "presentacion": "20 ltrs"
     },
+
     {
-        "categoria": "Cultivos",
-        "nombre": "Calciocorplus",
-        "descripcion": "Fórmula especial de Nitrato de Calcio líquido",
-        "imagen": "",
-        "id": "CAL-002",
-        "PVP": "$255.00",
-        "Presentacion": "20 ltrs"
-    },
-    {
-        "categoria": "Cultivos",
-        "nombre": "Calcioborcoplus",
-        "descripcion": "Fórmula especial Floración y Cuaje",
-        "imagen": "",
-        "id": "CAL-003",
-        "PVP": "$255.00",
-        "Presentacion": "20 ltrs"
-    },
-    {
-        "categoria": "Cultivos",
+        "rowId": "ALG-001",
         "nombre": "Algascorplus",
-        "descripcion": "Fórmula especial de Desarrollo",
-        "imagen": "https://i.imgur.com/gCal47w.jpeg",
-        "id": "ALG-001",
-        "PVP": "$205.00",
-        "Presentacion": "20 ltrs"
-    },
-    {
         "categoria": "Cultivos",
-        "nombre": "NITRATO DE CALCIO",
-        "descripcion": null,
-        "imagen": null,
-        "id": "CAL-001",
-        "PVP": "$12.00",
-        "Presentacion": "25 Kg"
+        "detalleAdicional": "Fórmula especial de Desarrollo",
+        "imagen": "https://i.imgur.com/gCal47w.jpeg",
+        "presentacion": "20 ltrs"
+    },
+
+    {
+        "rowId": "SER-001",
+        "nombre": "Visita Ténica Zamorana",
+        "categoria": "Servicios",
+        "detalleAdicional": "Fórmula especial de Desarrollo",
+        "imagen": "https://i.imgur.com/9UCa7qP.jpeg",
+        "presentacion": ""
     }
 ]
