@@ -134,5 +134,50 @@ const path = require('path');
 const express = require('express');
 const app = express();
 
+// -------------------------------------------------------------
+// CARRUSEL AUTOMÁTICO (Agrega esta función al final de todo)
+// -------------------------------------------------------------
+function iniciarCarruselValor() {
+  const container = document.querySelector('.valor-grid');
+  if (!container) return;
+
+  let autoScrollTimer = null;
+  const INTERVALO_MS = 3000;
+
+  function siguienteTarjeta() {
+    if (window.innerWidth > 768) return;
+
+    const anchuraTarjeta = container.clientWidth;
+    const maxScroll = container.scrollWidth - anchuraTarjeta;
+
+    if (Math.ceil(container.scrollLeft) >= maxScroll - 5) {
+      container.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      container.scrollBy({ left: anchuraTarjeta, behavior: 'smooth' });
+    }
+  }
+
+  function iniciar() {
+    parar();
+    autoScrollTimer = setInterval(siguienteTarjeta, INTERVALO_MS);
+  }
+
+  function parar() {
+    if (autoScrollTimer) clearInterval(autoScrollTimer);
+  }
+
+  iniciar();
+
+  container.addEventListener('touchstart', parar, { passive: true });
+  container.addEventListener('touchend', iniciar, { passive: true });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', iniciarCarruselValor);
+} else {
+  iniciarCarruselValor();
+}
+
 // Servir la carpeta estática "public"
 app.use(express.static(path.join(__dirname, 'public')));
+

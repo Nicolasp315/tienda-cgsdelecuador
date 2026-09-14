@@ -397,3 +397,51 @@ body {
   border-top: 1px solid #333;
   padding-top: 15px;
 }
+
+/* Botón Flotante de WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  width: 58px;
+  height: 58px;
+  bottom: 24px;
+  right: 24px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+  background-color: #20ba5a;
+}
+
+/* Carrusel Deslizable para los 3 recuadros en Móvil */
+@media (max-width: 768px) {
+  .valor-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth; /* Asegura el deslizado suave */
+    gap: 0;
+    padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .valor-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .valor-card {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
