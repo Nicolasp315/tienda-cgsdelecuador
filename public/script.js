@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function cargarProductos() {
   const grid = document.getElementById('productosGrid');
   try {
-    const respuesta = await fetch('/api/productos'); // Reemplaza con tu endpoint real si aplica
+    const respuesta = await fetch('./productos.json');
     if (!respuesta.ok) throw new Error('Error al obtener datos');
     
     productosGlobales = await respuesta.json();
