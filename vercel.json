@@ -13,3 +13,8 @@
     }
   ]
 }
+
+{
+  "outputDirectory": "public",
+  "cleanUrls": true
+}
