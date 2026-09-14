@@ -1,0 +1,399 @@
+/* VARIABLES Y RESET BÁSICO */
+:root {
+  --primary: #2e7d32;
+  --primary-dark: #1b5e20;
+  --accent: #4caf50;
+  --bg-light: #f4f8f5;
+  --text: #333333;
+  --text-muted: #666666;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* HEADER Y NAVEGACIÓN */
+.header {
+  background: var(--primary-dark);
+  color: var(--white);
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 55px;
+  height: 55px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.empresa-info h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.empresa-info p {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.nav-link-header {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.nav-link-header:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.btn-cotizar-general {
+  background: #25d366;
+  color: var(--white);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-cotizar-general:hover {
+  background: #1eb855;
+}
+
+
+/* PROPUESTA DE VALOR / ZAMORANOS */
+.propuesta-valor {
+  background-color: var(--white);
+  padding: 25px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.valor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 15px;
+}
+
+.valor-card {
+  display: flex;
+  align-items: flex-start;
+  background: #fafafa;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+.valor-icono {
+  font-size: 1.8rem;
+  margin-right: 12px;
+}
+
+.valor-info h4 {
+  margin-bottom: 4px;
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.valor-info p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+/* FILTROS Y BÚSQUEDA */
+.filters-section {
+  padding: 20px 0;
+}
+
+.categorias-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-categoria {
+  background: var(--white);
+  border: 1px solid #ccc;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.btn-categoria.active, .btn-categoria:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.search-box {
+  width: 100%;
+  max-width: 600px;
+  margin: 15px auto 0 auto;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+/* PRODUCTOS GRID Y CARDS */
+.productos-section {
+  padding-bottom: 40px;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.producto-card {
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+
+.producto-card:hover {
+  transform: translateY(-3px);
+}
+
+.producto-imagen {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: #f9f9f9;
+}
+
+.producto-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.producto-categoria {
+  font-size: 0.75rem;
+  background: #e8f5e9;
+  color: var(--primary);
+  padding: 2px 8px;
+  border-radius: 4px;
+  width: fit-content;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.producto-nombre {
+  font-size: 1.1rem;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.producto-descripcion {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+  margin-bottom: 12px;
+  flex-grow: 1;
+}
+
+.producto-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.producto-unidad {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.btn-agregar {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.btn-agregar:hover {
+  background: var(--primary-dark);
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 15px;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* SECCIÓN EDUCATIVA (BIOESTIMULANTES.HTML) */
+.seccion-educativa {
+  padding: 40px 0;
+  background: var(--white);
+}
+
+.articulo-bio {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.articulo-bio h2 {
+  color: var(--primary);
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.articulo-bio p {
+  margin-bottom: 12px;
+}
+
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.beneficio-card {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  border-top: 3px solid var(--primary);
+}
+
+.beneficio-card h3 {
+  font-size: 1rem;
+  color: var(--primary-dark);
+  margin-bottom: 6px;
+}
+
+.beneficio-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.banner-zamorano-educativo {
+  background: #e8f5e9;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #c8e6c9;
+}
+
+/* FOOTER */
+.footer {
+  background: #111;
+  color: #ccc;
+  padding: 30px 0 15px 0;
+  font-size: 0.85rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-section h4 {
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- FAVICON E ÍCONO PARA DISPOSITIVOS MÓVILES -->
+  <link rel="icon" type="image/jpeg" href="https://i.imgur.com/dlHly79.jpeg">
+  <link rel="apple-touch-icon" href="https://i.imgur.com/dlHly79.jpeg">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- TÍTULO Y METADATOS SEO -->
+  <title>Bioestimulantes Agrícolas y Asesoría Zamorana | CGS Del Ecuador</title>
+  <meta name="description" content="Bioestimulantes formulados por ingenieros Zamoranos para raíces, floración y fruto. Análisis de suelo, visitas técnicas y envíos a todo el Ecuador.">
+  <meta name="keywords" content="bioestimulantes agricolas Ecuador, ingenieros zamoranos, analisis de suelo, formulacion de insumos, envios nacionales insumos agricolas, Balzar Guayas">
+
+  <!-- OPEN GRAPH (WhatsApp y Redes Sociales) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bioestimulantes Agrícolas y Asesoría Zamorana | CGS Del Ecuador">
+  <meta property="og:description" content="Potencia tu cultivo con bioestimulantes y asesoría técnica de ingenieros Zamoranos. Cobertura en Balzar y envíos a todo el país.">
+  <meta property="og:image" content="https://i.imgur.com/dlHly79.jpeg">
+  <meta property="og:locale" content="es_EC">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- DATOS ESTRUCTURADOS / SCHEMA MARKUP -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AgriculturalBusiness",
+    "name": "CGS Del Ecuador",
+    "image": "https://i.imgur.com/dlHly79.jpeg",
+    "description": "Venta y asesoría técnica en insumos agrícolas, fertilizantes y soluciones para el campo en Balzar, Guayas y todo el Ecuador.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Balzar",
+      "addressRegion": "Guayas",
+      "addressCountry": "EC"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-1.3653",
+      "longitude": "-79.9048"
+    },
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Balzar"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Guayas"
+      },
+      {
+        "@type": "Country",
+        "name": "Ecuador"
+      }
+    ],
+    "email": "cgsdelecuador@gmail.com",
+    "telephone": "+593998232445",
+    "priceRange": "$$",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "07:30",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "08:00",
+        "closes": "13:00"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-section">
+          <img src="https://i.imgur.com/dlHly79.jpeg" alt="CGS Del Ecuador Logo" class="logo">
+          <div class="empresa-info">
+            <h1>CGS DEL ECUADOR</h1>
+            <p>🌱 Catálogo de Productos y Servicios 🌾</p>
+          </div>
+        </div>
+        <div class="header-right">
+          <a href="bioestimulantes.html" class="nav-link-header">🧪 ¿Qué son los Bioestimulantes?</a>
+          <button class="btn-cotizar-general" onclick="abrirWhatsappGeneral()">
+            📩 Asesoría por WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROPUESTA DE VALOR: ZAMORANOS Y ENVÍOS -->
+  <section class="propuesta-valor">
+    <div class="container">
+      <div class="valor-grid">
+        <div class="valor-card">
+          <div class="valor-icono">🎓</div>
+          <div class="valor-info">
+            <h4>Formulación y Asesoría Zamorana</h4>
+            <p>Técnicos graduados de El Zamorano a cargo de análisis de suelo, visitas de campo y formulación personalizada.</p>
+          </div>
+        </div>
+        <div class="valor-card">
+          <div class="valor-icono">🌱</div>
+          <div class="valor-info">
+            <h4>Bioestimulantes de Alto Rendimiento</h4>
+            <p>Productos enfocados en enraizamiento, tallos fuertes, floración y mayor llenado de fruto.</p>
+          </div>
+        </div>
+        <div class="valor-card">
+          <div class="valor-icono">🚚</div>
+          <div class="valor-info">
+            <h4>Envíos Nacionales</h4>
+            <p>Atención directa en línea y despachos a todas las provincias de Ecuador.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSCADOR Y CATEGORÍAS -->
+  <section class="filters-section">
+    <div class="container">
+      <div class="categorias-container">
+        <button class="btn-categoria active" onclick="filtrarCategoria('Todas', this)">Todas</button>
+        <button class="btn-categoria" onclick="filtrarCategoria('Hogar', this)">🏡 Hogar</button>
+        <button class="btn-categoria" onclick="filtrarCategoria('Cultivos', this)">🌱 Cultivos</button>
+        <button class="btn-categoria" onclick="filtrarCategoria('Potreros', this)">🌾 Potreros</button>
+        <button class="btn-categoria" onclick="filtrarCategoria('Servicios', this)">⚙️ Servicios</button>
+      </div>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="🔍 Buscar insumos, productos o ingredientes activos..." onkeyup="aplicarFiltros()">
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section class="productos-section">
+    <div class="container">
+      <div id="productosGrid" class="productos-grid">
+        <div class="loading">
+          <div class="spinner"></div>
+          <p>Cargando productos agrícolas...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL DE DETALLE -->
+  <div id="modalProducto" class="modal-overlay" onclick="cerrarModalFuera(event)">
+    <div class="modal-content">
+      <button class="modal-close" onclick="cerrarModalProducto()">✕</button>
+      <div id="modalProductoDetalle">
+        <!-- Contenido dinámico JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>CATÁLOGO AGRÍCOLA</h4>
+          <p>Atención directa a productores y distribuidores del campo</p>
+        </div>
+        <div class="footer-section">
+          <h4>Atención al Cliente</h4>
+          <p>📍 Balzar, Guayas, Ecuador</p>
+          <p>✉️ cgsdelecuador@gmail.com</p>
+        </div>
+        <div class="footer-section">
+          <h4>Horarios de Atención</h4>
+          <p>Lunes a Viernes: 7:30 AM - 5:00 PM</p>
+          <p>Sábados: 8:00 AM - 1:00 PM</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; CGS Del Ecuador - Cobertura local y envíos a todo el país.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
