@@ -41,3 +41,26 @@ app.get('/api/productos', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Servidor local activo en: http://localhost:${PORT}`);
 });
+
+const express = require('express');
+const path = require('path');
+const app = express();
+
+// Servir archivos estáticos de la carpeta public
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Ruta raíz que entrega el HTML principal
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Exportar la app para Vercel
+module.exports = app;
+
+// Iniciar servidor local si no está en Vercel
+if (process.env.NODE_ENV !== 'production') {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+  });
+}
