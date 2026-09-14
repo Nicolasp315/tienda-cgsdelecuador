@@ -59,7 +59,7 @@ function mostrarProductos(lista) {
             <div>
               ${producto.presentacion ? `<span class="producto-unidad">Presentación: ${producto.presentacion}</span>` : ''}
             </div>
-            <button class="btn-agregar" onclick='verDetalleProducto(${index})'>
+            <button class="btn-agregar" onclick='verDetalleProducto(${productosGlobales.indexOf(producto)})'>
               Más información
             </button>
           </div>
