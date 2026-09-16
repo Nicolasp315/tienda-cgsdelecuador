@@ -6,14 +6,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>CGS Del Ecuador | Soluciones Agrícolas y Asesoría Zamorana</title>
-  <meta name="description" content="Insumos agrícolas, bioestimulantes de alto rendimiento y asesoría técnica por ingenieros Zamoranos en Balzar, Guayas y todo el Ecuador.">
+  <title>CGS Del Ecuador | Bioestimulantes Agrícolas y Asesoría Zamorana</title>
+  <meta name="description" content="Potencia tu cultivo con bioestimulantes de alto rendimiento y asesoría técnica de ingenieros Zamoranos. Envíos desde Balzar a todo el Ecuador.">
 
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- HEADER UNIFICADO -->
+  <!-- HEADER -->
   <header class="header">
     <div class="container">
       <div class="header-content">
@@ -27,7 +27,7 @@
         <div class="header-right">
           <a href="index.html" class="nav-link-header">Inicio</a>
           <a href="productos.html" class="nav-link-header">Productos</a>
-          <a href="productos.html" class="nav-link-header" onclick="localStorage.setItem('filtroInicial', 'Servicios')">Servicios</a>
+          <a href="productos.html" class="nav-link-header">Servicios</a>
           <a href="bioestimulantes.html" class="nav-link-header">Nosotros</a>
           <button class="btn-cotizar-general" onclick="abrirWhatsappGeneral()">
             Contacto
@@ -37,49 +37,132 @@
     </div>
   </header>
 
-  <!-- HERO / SECCIÓN DE BIENVENIDA -->
-  <main class="seccion-educativa">
-    <div class="container">
-      <article class="articulo-bio" style="text-align: center;">
-        <h2>Potenciamos el Rendimiento de tu Cultivo</h2>
-        <p>En <strong>CGS Del Ecuador</strong> ofrecemos insumos agrícolas de alta calidad, formulaciones personalizadas y respaldo técnico especializado para el agricultor ecuatoriano.</p>
-        
-        <div style="margin: 25px 0; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-          <a href="productos.html" class="btn-cotizar-general" style="text-decoration: none; padding: 12px 24px; font-size: 1rem;">
-            🌾 Ver Catálogo de Productos
-          </a>
-          <button class="btn-cotizar-general" onclick="abrirWhatsappGeneral()" style="background: var(--primary); padding: 12px 24px; font-size: 1rem;">
-            📲 Asesórate con un Zamorano
-          </button>
-        </div>
-      </article>
+  <!-- 1. HERO SECTION -->
+  <section class="seccion-educativa" style="background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%); color: white; padding: 60px 0;">
+    <div class="container" style="text-align: center;">
+      <h2 style="font-size: 2.2rem; color: #ffffff; margin-bottom: 15px;">Innovación y Nutrición Agrícola para tus Cultivos</h2>
+      <p style="font-size: 1.1rem; max-width: 750px; margin: 0 auto 30px auto; opacity: 0.95; line-height: 1.5;">
+        Bioestimulantes de alto rendimiento y asesoría técnica especializada a cargo de Ingenieros Zamoranos.
+      </p>
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+        <a href="productos.html" class="btn-cotizar-general" style="background: #ffffff; color: #1b5e20; text-decoration: none; padding: 12px 28px; font-size: 1rem;">
+          🌾 Explorar Productos
+        </a>
+        <button class="btn-cotizar-general" onclick="abrirWhatsappGeneral()" style="padding: 12px 28px; font-size: 1rem;">
+          📲 Consulta Técnica por WhatsApp
+        </button>
+      </div>
+    </div>
+  </section>
 
-      <!-- PROPUESTA DE VALOR -->
-      <div class="valor-grid" style="margin-top: 40px;">
+  <!-- 2. MÉTRICAS / RESPAUDO -->
+  <section style="background: #ffffff; padding: 20px 0; border-bottom: 1px solid #e0e0e0;">
+    <div class="container">
+      <div style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; gap: 20px;">
+        <div>
+          <h3 style="color: var(--primary); font-size: 1.6rem; margin-bottom: 2px;">🎓 Zamoranos</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Formulación y Visitas de Campo</p>
+        </div>
+        <div>
+          <h3 style="color: var(--primary); font-size: 1.6rem; margin-bottom: 2px;">🚚 Cobertura Nacional</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Envíos desde Balzar a todo el país</p>
+        </div>
+        <div>
+          <h3 style="color: var(--primary); font-size: 1.6rem; margin-bottom: 2px;">🌱 Bioestimulación</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Enraizamiento, Floración y Fruto</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. ¿POR QUÉ ELEGIRNOS? -->
+  <section class="propuesta-valor" style="padding: 50px 0;">
+    <div class="container">
+      <h2 style="text-align: center; color: var(--primary-dark); margin-bottom: 30px; font-size: 1.8rem;">¿Por qué confiar en CGS Del Ecuador?</h2>
+      <div class="valor-grid">
         <div class="valor-card">
-          <div class="valor-icono">🎓</div>
+          <div class="valor-icono">🧪</div>
           <div class="valor-info">
-            <h4>Formulación y Asesoría Zamorana</h4>
-            <p>Análisis de suelo, visitas de campo y formulación técnica por ingenieros de El Zamorano.</p>
+            <h4>Formulación Especializada</h4>
+            <p>Insumos agrícolas desarrollados para optimizar la absorción de nutrientes y la respuesta al estrés ambiental.</p>
           </div>
         </div>
         <div class="valor-card">
-          <div class="valor-icono">🌱</div>
+          <div class="valor-icono">📋</div>
           <div class="valor-info">
-            <h4>Bioestimulantes de Alto Rendimiento</h4>
-            <p>Nutrición enfocada en desarrollo radicular, floración y llenado de fruto.</p>
+            <h4>Análisis y Diagnóstico</h4>
+            <p>Evaluación de requerimientos de suelo y cultivo para recomendar dosis y planes nutricionales exactos.</p>
           </div>
         </div>
         <div class="valor-card">
-          <div class="valor-icono">🚚</div>
+          <div class="valor-icono">⚡</div>
           <div class="valor-info">
-            <h4>Cobertura Nacional</h4>
-            <p>Atención directa desde Balzar, Guayas con despachos a todo el país.</p>
+            <h4>Atención y Despacho Rápido</h4>
+            <p>Respuesta inmediata por WhatsApp y envíos coordinados a cualquier provincia del Ecuador.</p>
           </div>
         </div>
       </div>
     </div>
-  </main>
+  </section>
+
+  <!-- 4. VISTA PREVIA DE PRODUCTOS Y SERVICIOS -->
+  <section class="productos-section" style="padding: 40px 0; background: var(--bg-light);">
+    <div class="container">
+      <h2 style="text-align: center; color: var(--primary-dark); margin-bottom: 10px; font-size: 1.8rem;">Soluciones Destacadas</h2>
+      <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">Conoce algunas de nuestras líneas principales de nutrición y asesoría</p>
+      
+      <div class="productos-grid">
+        <div class="producto-card">
+          <img src="https://i.imgur.com/FcxgECV.jpeg" alt="Bioestimulantes" class="producto-imagen">
+          <div class="producto-info">
+            <span class="producto-categoria">Cultivos</span>
+            <h3 class="producto-nombre">Bioestimulantes Radiculares</h3>
+            <p class="producto-descripcion">Formulaciones orientadas al desarrollo de raíces fuertes, mayor floración y cuajado.</p>
+            <div class="producto-footer">
+              <a href="productos.html" class="btn-agregar" style="text-decoration: none; text-align: center; width: 100%;">Ver en Catálogo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <img src="https://i.imgur.com/pjWq9Sw.jpeg" alt="Acondicionadores de Suelo" class="producto-imagen">
+          <div class="producto-info">
+            <span class="producto-categoria">Suelo</span>
+            <h3 class="producto-nombre">Acondicionadores de Suelo</h3>
+            <p class="producto-descripcion">Mejora la estructura del terreno y la disponibilidad biológica de los fertilizantes.</p>
+            <div class="producto-footer">
+              <a href="productos.html" class="btn-agregar" style="text-decoration: none; text-align: center; width: 100%;">Ver en Catálogo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto-card">
+          <img src="https://versat.ag/wp-content/uploads/2026/05/gestion-de-cleintes-en-el-agro.png" alt="Visita Técnica" class="producto-imagen">
+          <div class="producto-info">
+            <span class="producto-categoria">Servicios</span>
+            <h3 class="producto-nombre">Visita Técnica Zamorana</h3>
+            <p class="producto-descripcion">Inspección en campo, diagnóstico de cultivos y plan de recomendación personalizado.</p>
+            <div class="producto-footer">
+              <button class="btn-agregar" onclick="abrirWhatsappGeneral()" style="width: 100%;">Agendar Visita</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. BANNER EDUCATIVO / NOSOTROS -->
+  <section style="background: #ffffff; padding: 50px 0;">
+    <div class="container">
+      <div class="banner-zamorano-educativo">
+        <h3>¿Quieres saber más sobre cómo funcionan los Bioestimulantes?</h3>
+        <p style="margin: 10px 0 20px 0;">Aprende cómo actúan sobre la fisiología de la planta para mejorar su rendimiento frente al estrés y optimizar el uso de fertilizantes.</p>
+        <a href="bioestimulantes.html" class="btn-cotizar-general" style="text-decoration: none; background: var(--primary); display: inline-block;">
+          📘 Leer Artículo Técnico
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="footer">
