@@ -10,6 +10,41 @@
   <meta name="description" content="Potencia tu cultivo con bioestimulantes de alto rendimiento y asesoría técnica de ingenieros Zamoranos. Envíos desde Balzar a todo el Ecuador.">
 
   <link rel="stylesheet" href="styles.css">
+ <style>
+    /* Borde negro para separar el header del fondo verde */
+    .header {
+      border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+    }
+    
+    /* Indicador de deslizamiento (Puntos) */
+    .dots-indicator {
+      display: none; /* Oculto en PC por defecto */
+      justify-content: center;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      opacity: 0.3;
+    }
+
+    .dot.active {
+      opacity: 1;
+      width: 20px;
+      border-radius: 4px;
+    }
+
+    /* Se muestra únicamente en dispositivos móviles */
+    @media (max-width: 768px) {
+      .dots-indicator {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -27,58 +62,34 @@
         <div class="header-right">
           <a href="index.html" class="nav-link-header">Inicio</a>
           <a href="productos.html" class="nav-link-header">Productos</a>
-          <a href="productos.html" class="nav-link-header">Servicios</a>
-          <a href="bioestimulantes.html" class="nav-link-header">Nosotros</a>
-          <button class="btn-cotizar-general" onclick="abrirWhatsappGeneral()">
-            Contacto
-          </button>
+          <a href="servicios.html" class="nav-link-header">Servicios</a>
         </div>
       </div>
     </div>
   </header>
 
   <!-- 1. HERO SECTION -->
-  <section class="seccion-educativa" style="background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%); color: white; padding: 60px 0;">
+  <section class="seccion-educativa" style="background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%); color: white; padding: 50px 0;">
     <div class="container" style="text-align: center;">
-      <h2 style="font-size: 2.2rem; color: #ffffff; margin-bottom: 15px;">Innovación y Nutrición Agrícola para tus Cultivos</h2>
-      <p style="font-size: 1.1rem; max-width: 750px; margin: 0 auto 30px auto; opacity: 0.95; line-height: 1.5;">
+      <h2 style="font-size: 2rem; color: #ffffff; margin-bottom: 15px;">Innovación y Nutrición Agrícola para tus Cultivos</h2>
+      <p style="font-size: 1rem; max-width: 750px; margin: 0 auto 25px auto; opacity: 0.95; line-height: 1.5;">
         Bioestimulantes de alto rendimiento y asesoría técnica especializada a cargo de Ingenieros Zamoranos.
       </p>
-      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-        <a href="productos.html" class="btn-cotizar-general" style="background: #ffffff; color: #1b5e20; text-decoration: none; padding: 12px 28px; font-size: 1rem;">
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="productos.html" class="btn-cotizar-general" style="background: #ffffff; color: #1b5e20; text-decoration: none; padding: 12px 24px; font-size: 0.95rem;">
           🌾 Explorar Productos
         </a>
-        <button class="btn-cotizar-general" onclick="abrirWhatsappGeneral()" style="padding: 12px 28px; font-size: 1rem;">
-          📲 Consulta Técnica por WhatsApp
-        </button>
+        <a href="bioestimulantes.html" class="btn-cotizar-general" style="text-decoration: none; padding: 12px 24px; font-size: 0.95rem;">
+          🧪 ¿Qué son los Bioestimulantes?
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- 2. MÉTRICAS / RESPAUDO -->
-  <section style="background: #ffffff; padding: 20px 0; border-bottom: 1px solid #e0e0e0;">
+  <!-- 2. ¿POR QUÉ CONFIAR EN CGS DEL ECUADOR? -->
+  <section class="propuesta-valor" style="padding: 40px 0;">
     <div class="container">
-      <div style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; gap: 20px;">
-        <div>
-          <h3 style="color: var(--primary); font-size: 1.6rem; margin-bottom: 2px;">🎓 Zamoranos</h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">Formulación y Visitas de Campo</p>
-        </div>
-        <div>
-          <h3 style="color: var(--primary); font-size: 1.6rem; margin-bottom: 2px;">🚚 Cobertura Nacional</h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">Envíos desde Balzar a todo el país</p>
-        </div>
-        <div>
-          <h3 style="color: var(--primary); font-size: 1.6rem; margin-bottom: 2px;">🌱 Bioestimulación</h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">Enraizamiento, Floración y Fruto</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. ¿POR QUÉ ELEGIRNOS? -->
-  <section class="propuesta-valor" style="padding: 50px 0;">
-    <div class="container">
-      <h2 style="text-align: center; color: var(--primary-dark); margin-bottom: 30px; font-size: 1.8rem;">¿Por qué confiar en CGS Del Ecuador?</h2>
+      <h2 style="text-align: center; color: var(--primary-dark); margin-bottom: 25px; font-size: 1.7rem;">¿Por qué confiar en CGS Del Ecuador?</h2>
       <div class="valor-grid">
         <div class="valor-card">
           <div class="valor-icono">🧪</div>
@@ -102,14 +113,21 @@
           </div>
         </div>
       </div>
+
+      <!-- Puntos indicadores de deslizamiento -->
+      <div class="dots-indicator">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
     </div>
   </section>
 
-  <!-- 4. VISTA PREVIA DE PRODUCTOS Y SERVICIOS -->
+<!-- 3. VISTA PREVIA DE PRODUCTOS Y SERVICIOS -->
   <section class="productos-section" style="padding: 40px 0; background: var(--bg-light);">
     <div class="container">
-      <h2 style="text-align: center; color: var(--primary-dark); margin-bottom: 10px; font-size: 1.8rem;">Soluciones Destacadas</h2>
-      <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">Conoce algunas de nuestras líneas principales de nutrición y asesoría</p>
+      <h2 style="text-align: center; color: var(--primary-dark); margin-bottom: 10px; font-size: 1.7rem;">Soluciones Destacadas</h2>
+      <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">Conoce algunas de nuestras líneas principales de nutrición y asesoría</p>
       
       <div class="productos-grid">
         <div class="producto-card">
@@ -137,6 +155,18 @@
         </div>
 
         <div class="producto-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz7md-ZUOdLpP85ManESmrTl7xrZ0pLGjR7gQSnIFBWpgErtmvcvV5iKsv&s=10" alt="Análisis de Suelo" class="producto-imagen">
+          <div class="producto-info">
+            <span class="producto-categoria">Servicios</span>
+            <h3 class="producto-nombre">Análisis de Suelo</h3>
+            <p class="producto-descripcion">Diagnóstico químico y físico completo para determinar las deficiencias y requerimientos de tu terreno.</p>
+            <div class="producto-footer">
+              <button class="btn-agregar" onclick="abrirWhatsappGeneral()" style="width: 100%;">Solicitar Análisis</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto-card">
           <img src="https://versat.ag/wp-content/uploads/2026/05/gestion-de-cleintes-en-el-agro.png" alt="Visita Técnica" class="producto-imagen">
           <div class="producto-info">
             <span class="producto-categoria">Servicios</span>
@@ -147,19 +177,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. BANNER EDUCATIVO / NOSOTROS -->
-  <section style="background: #ffffff; padding: 50px 0;">
-    <div class="container">
-      <div class="banner-zamorano-educativo">
-        <h3>¿Quieres saber más sobre cómo funcionan los Bioestimulantes?</h3>
-        <p style="margin: 10px 0 20px 0;">Aprende cómo actúan sobre la fisiología de la planta para mejorar su rendimiento frente al estrés y optimizar el uso de fertilizantes.</p>
-        <a href="bioestimulantes.html" class="btn-cotizar-general" style="text-decoration: none; background: var(--primary); display: inline-block;">
-          📘 Leer Artículo Técnico
-        </a>
       </div>
     </div>
   </section>

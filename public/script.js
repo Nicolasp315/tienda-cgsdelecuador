@@ -8,13 +8,15 @@ function abrirWhatsappGeneral() {
   window.open(`https://wa.me/${TELEFONO_WHATSAPP}?text=${encodeURIComponent(mensaje)}`, '_blank');
 }
 
-// 2. Obtener productos de la API/Backend
+// 2. Inicialización al cargar el DOM
 document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('productosGrid')) {
     cargarProductos();
   }
+  iniciarCarruselValor();
 });
 
+// 3. Obtener productos del JSON
 async function cargarProductos() {
   const grid = document.getElementById('productosGrid');
   try {
@@ -24,14 +26,14 @@ async function cargarProductos() {
     productosGlobales = await respuesta.json();
     mostrarProductos(productosGlobales);
   } catch (error) {
-    console.warn('Cargando vista local o error de red:', error);
+    console.warn('Error cargando los productos:', error);
     if (grid) {
       grid.innerHTML = `<p style="text-align:center; width:100%; color:#666;">No se pudieron cargar los productos automáticos. Por favor, consulta directamente por WhatsApp.</p>`;
     }
   }
 }
 
-// 3. Renderizado de Catálogo sin precio visible
+// 4. Renderizado del Catálogo (Sin presentación en la tarjeta principal)
 function mostrarProductos(lista) {
   const grid = document.getElementById('productosGrid');
   if (!grid) return;
@@ -44,22 +46,21 @@ function mostrarProductos(lista) {
   let html = '';
   lista.forEach((producto, index) => {
     const categoriaBadge = producto.categoria || 'General';
+    const descripcionCorta = producto.descripcionCorta || producto.detalleAdicional || 'Sin descripción disponible';
+
     html += `
-      <div class="producto-card" data-id="${producto.rowId || index}">
+      <div class="producto-card" data-id="${producto.id || index}">
         <img src="${producto.imagen}" 
-     alt="${producto.nombre} - ${producto.categoria} | CGS Del Ecuador" 
-     class="producto-imagen" 
-     onerror="this.src='https://via.placeholder.com/300x220?text=Sin+Imagen'">
+             alt="${producto.nombre} - ${categoriaBadge} | CGS Del Ecuador" 
+             class="producto-imagen" 
+             onerror="this.src='https://via.placeholder.com/300x220?text=Sin+Imagen'">
         <div class="producto-info">
           <span class="producto-categoria">${categoriaBadge}</span>
           <h3 class="producto-nombre">${producto.nombre}</h3>
-          <p class="producto-descripcion">${producto.detalleAdicional || 'Sin detalles adicionales'}</p>
+          <p class="producto-descripcion">${descripcionCorta}</p>
           
-          <div class="producto-footer">
-            <div>
-              ${producto.presentacion ? `<span class="producto-unidad">Presentación: ${producto.presentacion}</span>` : ''}
-            </div>
-            <button class="btn-agregar" onclick='verDetalleProducto(${productosGlobales.indexOf(producto)})'>
+          <div class="producto-footer" style="justify-content: flex-end;">
+            <button class="btn-agregar" onclick="verDetalleProducto(${index})" style="width: 100%;">
               Más información
             </button>
           </div>
@@ -71,7 +72,7 @@ function mostrarProductos(lista) {
   grid.innerHTML = html;
 }
 
-// 4. Modal de Producto
+// 5. Modal de Detalle con Información Enriquecida
 function verDetalleProducto(index) {
   const prod = productosGlobales[index];
   if (!prod) return;
@@ -79,19 +80,31 @@ function verDetalleProducto(index) {
   const detalleContainer = document.getElementById('modalProductoDetalle');
   const modal = document.getElementById('modalProducto');
 
-  const mensajeProducto = `¡Hola! Quisiera consultar precio y envío del producto *${prod.nombre}*.`;
+  const mensajeProducto = `¡Hola! Quisiera consultar precio y disponibilidad del producto/servicio: *${prod.nombre}*.`;
   const urlWaProducto = `https://wa.me/${TELEFONO_WHATSAPP}?text=${encodeURIComponent(mensajeProducto)}`;
+
+  const detalles = prod.detalleModal || {};
+  const beneficios = detalles.beneficios || prod.detalleAdicional || 'Información detallada disponible vía WhatsApp.';
+  const composicion = detalles.composicion ? `<p style="margin: 8px 0; font-size: 0.9rem;"><strong>Composición / Enfoque:</strong> ${detalles.composicion}</p>` : '';
+  const uso = detalles.uso ? `<p style="margin: 8px 0; font-size: 0.9rem;"><strong>Modo de Uso / Aplicación:</strong> ${detalles.uso}</p>` : '';
+  const presentacionHTML = prod.presentacion ? `<p style="margin: 4px 0; font-size: 0.95rem;"><strong>Presentación disponible:</strong> ${prod.presentacion}</p>` : '';
 
   detalleContainer.innerHTML = `
     <img src="${prod.imagen}" alt="${prod.nombre}" style="width:100%; max-height:200px; object-fit:contain; margin-bottom:15px;" onerror="this.src='https://via.placeholder.com/300x220?text=Sin+Imagen'">
     <span class="producto-categoria" style="display:inline-block; margin-bottom: 8px;">${prod.categoria || 'General'}</span>
     <h2 style="margin: 5px 0 10px 0; color: #2e7d32; font-size: 1.4rem;">${prod.nombre}</h2>
-    <p style="margin: 4px 0;"><strong>Presentación:</strong> ${prod.presentacion || 'N/A'}</p>
+    ${presentacionHTML}
+    
     <hr style="margin: 12px 0; border: 0; border-top: 1px solid #eee;">
-    <p style="color: #444; line-height: 1.4; font-size: 0.95rem;">${prod.detalleAdicional || 'Sin detalles adicionales registrados.'}</p>
+    
+    <div style="color: #444; text-align: left; line-height: 1.5;">
+      <p style="margin: 8px 0; font-size: 0.95rem;"><strong>Beneficios clave:</strong> ${beneficios}</p>
+      ${composicion}
+      ${uso}
+    </div>
     
     <button onclick="window.open('${urlWaProducto}', '_blank')" class="btn-cotizar-general" style="width: 100%; margin-top: 18px; padding: 12px; font-size: 1rem;">
-      📲 Consultar precio y disponibilidad por WhatsApp
+      📲 Consultar o Cotizar por WhatsApp
     </button>
   `;
 
@@ -109,7 +122,7 @@ function cerrarModalFuera(event) {
   }
 }
 
-// 5. Filtros
+// 6. Filtros y Búsqueda
 function filtrarCategoria(cat, boton) {
   categoriaActual = cat;
   document.querySelectorAll('.btn-categoria').forEach(b => b.classList.remove('active'));
@@ -122,21 +135,15 @@ function aplicarFiltros() {
   
   const filtrados = productosGlobales.filter(prod => {
     const coincideCat = (categoriaActual === 'Todas') || (prod.categoria === categoriaActual);
-    const coincideBusqueda = (prod.nombre || '').toLowerCase().includes(busqueda) || 
-                             (prod.detalleAdicional || '').toLowerCase().includes(busqueda);
+    const textoBuscar = `${prod.nombre} ${prod.descripcionCorta || ''} ${prod.detalleAdicional || ''}`.toLowerCase();
+    const coincideBusqueda = textoBuscar.includes(busqueda);
     return coincideCat && coincideBusqueda;
   });
 
   mostrarProductos(filtrados);
 }
 
-const path = require('path');
-const express = require('express');
-const app = express();
-
-// -------------------------------------------------------------
-// CARRUSEL AUTOMÁTICO (Agrega esta función al final de todo)
-// -------------------------------------------------------------
+// 7. Carrusel Automático (Para la sección de valores en móviles)
 function iniciarCarruselValor() {
   const container = document.querySelector('.valor-grid');
   if (!container) return;
@@ -171,13 +178,3 @@ function iniciarCarruselValor() {
   container.addEventListener('touchstart', parar, { passive: true });
   container.addEventListener('touchend', iniciar, { passive: true });
 }
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', iniciarCarruselValor);
-} else {
-  iniciarCarruselValor();
-}
-
-// Servir la carpeta estática "public"
-app.use(express.static(path.join(__dirname, 'public')));
-

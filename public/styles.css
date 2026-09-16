@@ -445,3 +445,38 @@ body {
     scroll-snap-stop: always;
   }
 }
+
+/* Flechas de navegación */
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(46, 125, 50, 0.9);
+      color: white;
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 10;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .slider-btn:hover {
+      background: var(--primary-dark, #1b5e20);
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .slider-btn.prev { left: -15px; }
+    .slider-btn.next { right: -15px; }
+
+    /* En móviles ajustamos posición para no tapar bordes */
+    @media (max-width: 768px) {
+      .slider-btn.prev { left: 5px; }
+      .slider-btn.next { right: 5px; }
+    }

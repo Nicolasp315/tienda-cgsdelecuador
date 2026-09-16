@@ -1,37 +1,67 @@
 [
-    {
-        "rowId": "BIO-001",
-        "nombre": "Bioscorplus",
-        "categoria": "Cultivos",
-        "detalleAdicional": "Fórmula especial de Inicio",
-        "imagen": "https://i.imgur.com/rvjJJIL.jpeg",
-        "presentacion": "20 ltrs"
-    },
-
-    {
-        "rowId": "HUM-001",
-        "nombre": "Humicorplus",
-        "categoria": "Cultivos",
-        "detalleAdicional": "Fórmula especial para Acondicionar suelo y Raíces",
-        "imagen": "https://i.imgur.com/aINfMZ6.jpeg",
-        "presentacion": "20 ltrs"
-    },
-
-    {
-        "rowId": "ALG-001",
-        "nombre": "Algascorplus",
-        "categoria": "Cultivos",
-        "detalleAdicional": "Fórmula especial de Desarrollo",
-        "imagen": "https://i.imgur.com/gCal47w.jpeg",
-        "presentacion": "20 ltrs"
-    },
-
-    {
-        "rowId": "SER-001",
-        "nombre": "Visita Ténica Zamorana",
-        "categoria": "Servicios",
-        "detalleAdicional": "Visita ténica especializada",
-        "imagen": "https://i.imgur.com/9UCa7qP.jpeg",
-        "presentacion": ""
+  {
+    "id": "BIO-001",
+    "nombre": "Bioscorplus",
+    "categoria": "Cultivos",
+    "descripcionCorta": "Fórmula especial de Inicio",
+    "presentacion": "20 ltrs",
+    "imagen": "https://i.imgur.com/rvjJJIL.jpeg",
+    "detalleModal": {
+      "beneficios": "Promueve la formación intensiva de raicillas nuevas, mejora el enraizamiento post-trasplante y prepara la planta para una absorción eficiente de nutrientes.",
+      "composicion": "Complejo orgánico con bioestimulantes, aminoácidos libres y extractos altamente concentrados.",
+      "uso": "Aplicación drench o fertirriego durante la etapa de establecimiento y brotación inicial."
     }
+  },
+  {
+    "id": "HUM-001",
+    "nombre": "Humicorplus",
+    "categoria": "Cultivos",
+    "descripcionCorta": "Fórmula especial para Acondicionar suelo y Raíces",
+    "presentacion": "20 ltrs",
+    "imagen": "https://i.imgur.com/aINfMZ6.jpeg",
+    "detalleModal": {
+      "beneficios": "Descompacta el suelo, incrementa la capacidad de retención de humedad y maximiza la disponibilidad biológica de los fertilizantes.",
+      "composicion": "Ácidos húmicos y fúlvicos de alta solubilidad e interactividad en la rizosfera.",
+      "uso": "Aplicar directamente al suelo antes del trasplante o al inicio del ciclo de fertilización."
+    }
+  },
+  {
+    "id": "ALG-001",
+    "nombre": "Algascorplus",
+    "categoria": "Cultivos",
+    "descripcionCorta": "Fórmula especial de Desarrollo",
+    "presentacion": "20 ltrs",
+    "imagen": "https://i.imgur.com/gCal47w.jpeg",
+    "detalleModal": {
+      "beneficios": "Supera situaciones de estrés hídrico o térmico, activa el crecimiento foliar y potencia la floración y el cuajado de frutos.",
+      "composicion": "Extractos puros de algas marinas enriquecidos con micronutrientes esenciales.",
+      "uso": "Aplicación foliar en etapas clave de crecimiento vegetal, pre-floración y llenado."
+    }
+  },
+  {
+    "id": "SER-001",
+    "nombre": "Visita Técnica Zamorana",
+    "categoria": "Servicios",
+    "descripcionCorta": "Visita técnica especializada",
+    "presentacion": "",
+    "imagen": "https://i.imgur.com/9UCa7qP.jpeg",
+    "detalleModal": {
+      "beneficios": "Diagnóstico profesional in situ, identificación temprana de deficiencias nutricionales y optimización de tu plan de fertilización.",
+      "composicion": "A cargo de profesionales e ingenieros graduados de la Escuela Agrícola Panamericana El Zamorano.",
+      "uso": "Coordinación directa vía WhatsApp para agendar fecha de visita en tu finca o terreno."
+    }
+  },
+  {
+    "id": "SER-002",
+    "nombre": "Análisis de Suelo",
+    "categoria": "Servicios",
+    "descripcionCorta": "Diagnóstico químico y físico completo de terreno",
+    "presentacion": "",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz7md-ZUOdLpP85ManESmrTl7xrZ0pLGjR7gQSnIFBWpgErtmvcvV5iKsv&s=10",
+    "detalleModal": {
+      "beneficios": "Permite conocer exactamente qué nutrientes le faltan a tu suelo para evitar sobrecostos en fertilizantes innecesarios.",
+      "composicion": "Evaluación química (pH, materia orgánica, N, P, K, microelementos) y recomendaciones de enmienda.",
+      "uso": "Envío o toma de muestras guiada por nuestros técnicos capacitados."
+    }
+  }
 ]

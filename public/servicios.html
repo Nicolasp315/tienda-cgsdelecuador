@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="icon" type="image/jpeg" href="https://i.imgur.com/dlHly79.jpeg">
+  <link rel="apple-touch-icon" href="https://i.imgur.com/dlHly79.jpeg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Servicios | CGS Del Ecuador</title>
+  <meta name="description" content="Servicios especializados de Asesoría Técnica Zamorana y Análisis de Suelo para optimizar la productividad de tu cultivo.">
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .header {
+      border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+    }
+
+    /* Layout de servicios en grid vertical */
+    .servicios-list {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Tarjeta Horizontal Limpia */
+    .servicio-card-horizontal {
+      display: flex;
+      flex-direction: row;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e2e8f0;
+      overflow: hidden;
+      min-height: 280px;
+    }
+
+    .servicio-img-col {
+      flex: 1;
+      max-width: 40%;
+      background: #f8fafc;
+    }
+
+    .servicio-img-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .servicio-info-col {
+      flex: 1.5;
+      padding: 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Responsivo para celulares */
+    @media (max-width: 768px) {
+      .servicio-card-horizontal {
+        flex-direction: column;
+      }
+      .servicio-img-col {
+        max-width: 100%;
+        height: 220px;
+      }
+      .servicio-info-col {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-section">
+          <img src="https://i.imgur.com/dlHly79.jpeg" alt="CGS Del Ecuador Logo" class="logo">
+          <div class="empresa-info">
+            <h1>CGS DEL ECUADOR</h1>
+            <p>🌱 Soluciones y Productos para el Campo 🌾</p>
+          </div>
+        </div>
+        <div class="header-right">
+          <a href="index.html" class="nav-link-header">Inicio</a>
+          <a href="productos.html" class="nav-link-header">Productos</a>
+          <a href="servicios.html" class="nav-link-header active">Servicios</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECCIÓN PRINCIPAL DE SERVICIOS -->
+  <section style="padding: 60px 0 80px 0; background: var(--bg-light); min-height: 75vh;">
+    <div class="container">
+      <h2 style="text-align: center; color: var(--primary-dark); font-size: 2.2rem; margin-bottom: 10px;">
+        Servicios Especializados
+      </h2>
+      <p style="text-align: center; color: var(--text-muted); margin-bottom: 45px; font-size: 1.05rem;">
+        Diagnóstico y acompañamiento técnico directo para optimizar el rendimiento de tu cultivo
+      </p>
+
+      <div class="servicios-list">
+        
+        <!-- SERVICIO 1 -->
+        <article class="servicio-card-horizontal">
+          <div class="servicio-img-col">
+            <img src="https://i.imgur.com/9UCa7qP.jpeg" alt="Visita Técnica Zamorana">
+          </div>
+          <div class="servicio-info-col">
+            <div>
+              <span class="producto-categoria" style="display:inline-block; margin-bottom: 10px;">Asesoría en Campo</span>
+              <h3 style="color: #2e7d32; font-size: 1.6rem; margin-bottom: 12px; font-weight: 700;">Visita Técnica Zamorana</h3>
+              <p style="color: #475569; line-height: 1.6; margin-bottom: 15px; font-size: 0.98rem;">
+                Inspección in situ, diagnóstico nutricional directo en cultivo y diseño de plan de recomendación personalizado a cargo de ingenieros agrónomos.
+              </p>
+              <ul style="color: #64748b; font-size: 0.92rem; margin-bottom: 25px; padding-left: 20px; line-height: 1.5;">
+                <li>Evaluación visual de deficiencias nutricionales y plagas.</li>
+                <li>Recomendación de dosis exacta de insumos y bioestimulantes.</li>
+                <li>Seguimiento post-aplicación en terreno.</li>
+              </ul>
+            </div>
+            <button class="btn-cotizar-general" onclick="abrirWhatsappGeneral()" style="width: 100%; text-align: center; padding: 12px; font-weight: 600;">
+              Agendar Visita por WhatsApp
+            </button>
+          </div>
+        </article>
+
+        <!-- SERVICIO 2 -->
+        <article class="servicio-card-horizontal">
+          <div class="servicio-img-col">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz7md-ZUOdLpP85ManESmrTl7xrZ0pLGjR7gQSnIFBWpgErtmvcvV5iKsv&s=10" alt="Análisis de Suelo">
+          </div>
+          <div class="servicio-info-col">
+            <div>
+              <span class="producto-categoria" style="display:inline-block; margin-bottom: 10px;">Diagnóstico de Suelos</span>
+              <h3 style="color: #2e7d32; font-size: 1.6rem; margin-bottom: 12px; font-weight: 700;">Análisis de Suelo</h3>
+              <p style="color: #475569; line-height: 1.6; margin-bottom: 15px; font-size: 0.98rem;">
+                Diagnóstico químico y físico completo para determinar los niveles nutricionales exactos de tu terreno y corregir deficiencias con precisión.
+              </p>
+              <ul style="color: #64748b; font-size: 0.92rem; margin-bottom: 25px; padding-left: 20px; line-height: 1.5;">
+                <li>Evaluación de pH, materia orgánica y balance N-P-K.</li>
+                <li>Guía técnica para la toma y envío correcto de muestras.</li>
+                <li>Interpretación de resultados y plan de enmiendas.</li>
+              </ul>
+            </div>
+            <button class="btn-cotizar-general" onclick="abrirWhatsappGeneral()" style="width: 100%; text-align: center; padding: 12px; font-weight: 600;">
+              Solicitar Análisis por WhatsApp
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>CGS DEL ECUADOR</h4>
+          <p>Atención directa a productores y distribuidores del campo.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Atención al Cliente</h4>
+          <p>📍 Balzar, Guayas, Ecuador</p>
+          <p>✉️ cgsdelecuador@gmail.com</p>
+        </div>
+        <div class="footer-section">
+          <h4>Horarios de Atención</h4>
+          <p>Lunes a Viernes: 7:30 AM - 5:00 PM</p>
+          <p>Sábados: 8:00 AM - 1:00 PM</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; CGS Del Ecuador - Cobertura local y envíos a todo el país.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=2.0"></script>
+</body>
+</html>
