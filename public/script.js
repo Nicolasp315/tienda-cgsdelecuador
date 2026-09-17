@@ -1,4 +1,4 @@
-const TELEFONO_WHATSAPP = '593998232445';
+const TELEFONO_WHATSAPP = '593963518696';
 let productosGlobales = [];
 let categoriaActual = 'Todas';
 

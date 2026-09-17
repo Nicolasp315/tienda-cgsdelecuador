@@ -63,5 +63,57 @@
       "composicion": "Evaluación química (pH, materia orgánica, N, P, K, microelementos) y recomendaciones de enmienda.",
       "uso": "Envío o toma de muestras guiada por nuestros técnicos capacitados."
     }
+  },
+  {
+  "id": "CAL-001",
+  "nombre": "CalcioCorplus",
+  "categoria": "Cultivos",
+  "descripcionCorta": "Fuente líquida de calcio nitratado",
+  "presentacion": "20 ltrs",
+  "imagen": "https://i.imgur.com/X4KqssB.jpeg",
+  "detalleModal": {
+    "beneficios": "Aumenta el rendimiento y la firmeza del fruto, mejora la vida postcosecha y fortalece la resistencia celular de la planta frente a enfermedades.",
+    "composicion": "Calcio Nitratado Líquido (CaO 26.5%, Nitrógeno Total 15.5%: N-Nítrico 14.5% y N-Amoniacal 1.1%).",
+    "uso": "Aplicación foliar o por fertirriego en todas las etapas según la demanda del cultivo."
   }
+},
+{
+  "id": "POT-001",
+  "nombre": "PotreroCorplus",
+  "categoria": "Cultivos",
+  "descripcionCorta": "Fórmula Especial de Bioestimulante",
+  "presentacion": "20 ltrs",
+  "imagen": "https://i.imgur.com/qvvbFNL.jpeg",
+  "detalleModal": {
+    "beneficios": "Afecta en la tasa lucrativa de látex y rentabilidad de origen mineral por betaínas, azúcares, ácidos halogenados circulares y sumarios. Mejora la asimilación de nutrientes en plantas con estrés hídrico 80% en muy volátil T.R.T en íglifos para gasto completo. Estimula el crecimiento y desarrollo vegetativo. Mejora la absorción en micronutrientes y fortalece sistemas radiculares. Aumenta la resistencia al estrés biótico y abiótico. Incrementa la productividad y utilidades de cultivos. Favorece la estabilidad isoenérgica y mejora la eficacia del cultivo.",
+    "composicion": "HMigem Tratil (%)70 g/l, HMigem Prirtss (%)77 g/l, Nitrógeno (Urea+ () 218 g/l, Ácidos aminados (CAA) 280 g/l, Potasio (K2O) asimilable 80 g/l, Magnesio (MgK) 70.5 g/l, Azufre (S) 3.8 g/l, Boro (B) 2.1 g/l, Cobre (Cu) 5.1 g/l, Zinc (Zn) 3.3 g/l, Antioxidantes Sheet (T77) 68.0 g/l, Doscilsol 1 g/ml, pH en Solución al 10% 7.2, Ácidos Graseosos 731 g/l, Acido Málico 145 g/l, Carbono Orgánico 318 g/l",
+    "uso": "Aplicación foliar o fertirriego en todas las etapas del cultivo. Dosis: 2 l/100 l de agua. Modo de acción: afecta la tasa lucrativa de látex y rentabilidad, mejora la absorción de nutrientes y fortalece sistemas radiculares para optimizar la productividad."
+  }
+},
+{
+  "id": "CAL-002",
+  "nombre": "CalciBorCorPlus",
+  "categoria": "Cultivos",
+  "descripcionCorta": "Nutrición Efectiva y Segura de Calcio y Boro para todo tipo de Cultivos",
+  "presentacion": "20 ltrs",
+  "imagen": "https://i.imgur.com/MbuLhlj.jpeg",
+  "detalleModal": {
+    "beneficios": "Fortalece por Quitina e Eero síntesis, poniendo el Potasio en la planta disponible y contrarrestando la ablandadura. Mantiene sólidas las paredes celulares aumentando el almacenamiento de nutrientes. Estimula sólidos los nutrientes en la planta mejorando significativamente productividad. Aumenta la resistencia al estrés biótico y abiótico. Incrementa la productividad y utilidades de cultivos. Favorece la estabilidad isoenérgica y mejora la eficacia del cultivo.",
+    "composicion": "Calcio T-Rxon 70 g/l, Nitrógeno-Ácid (N) 68 g/l, Boro Asimilable 219 g/l, Magnesio Asimilable (Mg) 217 g/l, Zinc (Zn) 156 g/l, Magnesio (MgK) 53.9 g/l, Hierro (Fe) 3.9 g/l, Azufre (S) 3.8 g/l, Cobre (Cu) 3.7 g/l, Zinc (Zn) 3.7 g/l, Antioxidantes Sheet (T77) 400.0 g/l, Ácido fúlvico 1.5 u/l, Ácidos Graseosos 731 g/l, Ácidos Graseosos (T7) 759 g/l. Densidad: 1.6 g/ml, pH: 2.8, Color: Verde",
+    "uso": "Aplicación foliar o fertirriego en todas las etapas del cultivo. Modo de acción: Nutrición efectiva y segura de calcio y boro. Fortalece paredes celulares, mejora la absorción de nutrientes e incrementa la productividad de cultivos. Suspensión foliar e Hidro solución. Contacto: WhatsApp 0963518696 - CGS DEL ECUADOR"
+  }
+},
+{
+  "id": "FUN-001",
+  "nombre": "FungiCorPlus",
+  "categoria": "Cultivos",
+  "descripcionCorta": "Fórmula Especial de Bioestimulante",
+  "presentacion": "20 ltrs",
+  "imagen": "https://i.imgur.com/RjJuZHi.jpeg",
+  "detalleModal": {
+    "beneficios": "Estimula el crecimiento y desarrollo vegetativo. Mejora la absorción en micronutrientes y fortalece sistemas radiculares. Aumenta la resistencia al estrés biótico y abiótico. Incrementa la productividad y utilidades de cultivos. Favorece la estabilidad isoenérgica y mejora la eficacia del cultivo. Afecta en la tasa lucrativa de látex y rentabilidad de origen mineral por betaínas, azúcares, ácidos halogenados circulares y sumarios. Mejora la asimilación de nutrientes 80% en muy volátil T.R.T en íglifos para gasto completo.",
+    "composicion": "HMigem Tratil (%) 76 g/l, HMigem Pirtss (%) 75 g/l, Nitrógeno (Urea+ (N)) 271.8 g/l, Ácidos aminados (CAA) 298 g/l, Potasio (K2O) 155 g/l, Magnesio (MgK) 79.5 g/l, Azufre (S) 2.3 g/l, Boro (B) 1.8 g/l, Cobre (Cu) 2.8 g/l, Zinc (Zn) 3.5 g/l, Antioxidantes Sper (O.T) 30.5 g/l, Molibdeno 1.4 u/ml, Ácidos Graseosos (T7) 319 g/l, Ácidos Graseosos 731 g/l, Carbono Orgánico 318 g/l",
+    "uso": "Aplicación foliar o fertirriego en todas las etapas del cultivo. Modo de acción: Mejora la asimilación de nutrientes, fortalece sistemas radiculares e incrementa la productividad. Dosis: 2 l/100 l de agua. Precauciones y advertencias: Leer etiqueta antes de usar producto. Distribuido por: CGS DEL ECUADOR. WhatsApp: 0963518696"
+  }
+}
 ]
