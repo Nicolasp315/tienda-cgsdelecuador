@@ -1,20 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Página principal (Catálogo) -->
+  
+  <!-- Página Principal (Home) -->
   <url>
-    <loc>https://tusitio.com/</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://cgsdelecuador.com/</loc>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Sección o página informativa de Bioestimulantes -->
+  <!-- Catálogo de Productos -->
   <url>
-    <loc>https://tusitio.com/bioestimulantes.html</loc>
-    <lastmod>2026-09-13</lastmod>
+    <loc>https://cgsdelecuador.com/productos.html</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Servicios (Visita Técnica y Análisis) -->
+  <url>
+    <loc>https://cgsdelecuador.com/servicios.html</loc>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Landing de Bioestimulantes Agrícolas -->
+  <url>
+    <loc>https://cgsdelecuador.com/bioestimulantes.html</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Pestaña Nosotros -->
+  <url>
+    <loc>https://cgsdelecuador.com/nosotros.html</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
 </urlset>
