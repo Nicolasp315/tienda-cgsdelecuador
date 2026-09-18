@@ -1,4 +1,30 @@
 [
+    {
+    "id": "SER-001",
+    "nombre": "Visita Técnica Zamorana",
+    "categoria": "Servicios",
+    "descripcionCorta": "Visita técnica especializada",
+    "presentacion": "",
+    "imagen": "https://i.imgur.com/9UCa7qP.jpeg",
+    "detalleModal": {
+      "beneficios": "Diagnóstico profesional in situ, identificación temprana de deficiencias nutricionales y optimización de tu plan de fertilización.",
+      "composicion": "A cargo de profesionales e ingenieros graduados de la Escuela Agrícola Panamericana El Zamorano.",
+      "uso": "Coordinación directa vía WhatsApp para agendar fecha de visita en tu finca o terreno."
+    }
+  },
+  {
+    "id": "SER-002",
+    "nombre": "Análisis de Suelo",
+    "categoria": "Servicios",
+    "descripcionCorta": "Diagnóstico químico y físico completo de terreno",
+    "presentacion": "",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz7md-ZUOdLpP85ManESmrTl7xrZ0pLGjR7gQSnIFBWpgErtmvcvV5iKsv&s=10",
+    "detalleModal": {
+      "beneficios": "Permite conocer exactamente qué nutrientes le faltan a tu suelo para evitar sobrecostos en fertilizantes innecesarios.",
+      "composicion": "Evaluación química (pH, materia orgánica, N, P, K, microelementos) y recomendaciones de enmienda.",
+      "uso": "Envío o toma de muestras guiada por nuestros técnicos capacitados."
+    }
+  },
   {
     "id": "BIO-001",
     "nombre": "Bioscorplus",
@@ -39,32 +65,6 @@
     }
   },
   {
-    "id": "SER-001",
-    "nombre": "Visita Técnica Zamorana",
-    "categoria": "Servicios",
-    "descripcionCorta": "Visita técnica especializada",
-    "presentacion": "",
-    "imagen": "https://i.imgur.com/9UCa7qP.jpeg",
-    "detalleModal": {
-      "beneficios": "Diagnóstico profesional in situ, identificación temprana de deficiencias nutricionales y optimización de tu plan de fertilización.",
-      "composicion": "A cargo de profesionales e ingenieros graduados de la Escuela Agrícola Panamericana El Zamorano.",
-      "uso": "Coordinación directa vía WhatsApp para agendar fecha de visita en tu finca o terreno."
-    }
-  },
-  {
-    "id": "SER-002",
-    "nombre": "Análisis de Suelo",
-    "categoria": "Servicios",
-    "descripcionCorta": "Diagnóstico químico y físico completo de terreno",
-    "presentacion": "",
-    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz7md-ZUOdLpP85ManESmrTl7xrZ0pLGjR7gQSnIFBWpgErtmvcvV5iKsv&s=10",
-    "detalleModal": {
-      "beneficios": "Permite conocer exactamente qué nutrientes le faltan a tu suelo para evitar sobrecostos en fertilizantes innecesarios.",
-      "composicion": "Evaluación química (pH, materia orgánica, N, P, K, microelementos) y recomendaciones de enmienda.",
-      "uso": "Envío o toma de muestras guiada por nuestros técnicos capacitados."
-    }
-  },
-  {
   "id": "CAL-001",
   "nombre": "CalcioCorplus",
   "categoria": "Cultivos",
@@ -85,9 +85,9 @@
   "presentacion": "20 ltrs",
   "imagen": "https://i.imgur.com/qvvbFNL.jpeg",
   "detalleModal": {
-    "beneficios": "Afecta en la tasa lucrativa de látex y rentabilidad de origen mineral por betaínas, azúcares, ácidos halogenados circulares y sumarios. Mejora la asimilación de nutrientes en plantas con estrés hídrico 80% en muy volátil T.R.T en íglifos para gasto completo. Estimula el crecimiento y desarrollo vegetativo. Mejora la absorción en micronutrientes y fortalece sistemas radiculares. Aumenta la resistencia al estrés biótico y abiótico. Incrementa la productividad y utilidades de cultivos. Favorece la estabilidad isoenérgica y mejora la eficacia del cultivo.",
-    "composicion": "HMigem Tratil (%)70 g/l, HMigem Prirtss (%)77 g/l, Nitrógeno (Urea+ () 218 g/l, Ácidos aminados (CAA) 280 g/l, Potasio (K2O) asimilable 80 g/l, Magnesio (MgK) 70.5 g/l, Azufre (S) 3.8 g/l, Boro (B) 2.1 g/l, Cobre (Cu) 5.1 g/l, Zinc (Zn) 3.3 g/l, Antioxidantes Sheet (T77) 68.0 g/l, Doscilsol 1 g/ml, pH en Solución al 10% 7.2, Ácidos Graseosos 731 g/l, Acido Málico 145 g/l, Carbono Orgánico 318 g/l",
-    "uso": "Aplicación foliar o fertirriego en todas las etapas del cultivo. Dosis: 2 l/100 l de agua. Modo de acción: afecta la tasa lucrativa de látex y rentabilidad, mejora la absorción de nutrientes y fortalece sistemas radiculares para optimizar la productividad."
+    "beneficios": "Estimula el crecimiento y desarrollo vegetativo. Mejora la absorción de nutrientes y fortalece el sistema radicular. Aumenta la resistencia al estrés biótico y abiótico. Incrementa la productividad y la calidad de los cultivos. Favorece la actividad microbiana y mejora la estructura del suelo.",
+    "composicion": "Nitrógeno Total 70 g/l, Fósforo Asimilable 210 g/l, Potasio soluble 70 g/l, Magnesio 10.5 g/l, Azufre 3.5 g/l, Boro 3.5 g/l, Cobre 2.8 g/l, Zinc 3.5 g/l, Aminoácidos libres 28.0 g/l, Ácidos Húmicos 525 g/l, Ácidos Fúlvicos 149 g/l, Carbono Orgánico 315 g/l.",
+    "uso": "Aplicación foliar fuente de fósforo y aminoácidos. Relación NPK 1:3:1 óptima para gran variedad de cultivos. Aplicar en estados iniciales y en fructificación. Presentación: Envases plásticos de 20 L y 200 L."
   }
 },
 {
@@ -98,9 +98,9 @@
   "presentacion": "20 ltrs",
   "imagen": "https://i.imgur.com/MbuLhlj.jpeg",
   "detalleModal": {
-    "beneficios": "Fortalece por Quitina e Eero síntesis, poniendo el Potasio en la planta disponible y contrarrestando la ablandadura. Mantiene sólidas las paredes celulares aumentando el almacenamiento de nutrientes. Estimula sólidos los nutrientes en la planta mejorando significativamente productividad. Aumenta la resistencia al estrés biótico y abiótico. Incrementa la productividad y utilidades de cultivos. Favorece la estabilidad isoenérgica y mejora la eficacia del cultivo.",
-    "composicion": "Calcio T-Rxon 70 g/l, Nitrógeno-Ácid (N) 68 g/l, Boro Asimilable 219 g/l, Magnesio Asimilable (Mg) 217 g/l, Zinc (Zn) 156 g/l, Magnesio (MgK) 53.9 g/l, Hierro (Fe) 3.9 g/l, Azufre (S) 3.8 g/l, Cobre (Cu) 3.7 g/l, Zinc (Zn) 3.7 g/l, Antioxidantes Sheet (T77) 400.0 g/l, Ácido fúlvico 1.5 u/l, Ácidos Graseosos 731 g/l, Ácidos Graseosos (T7) 759 g/l. Densidad: 1.6 g/ml, pH: 2.8, Color: Verde",
-    "uso": "Aplicación foliar o fertirriego en todas las etapas del cultivo. Modo de acción: Nutrición efectiva y segura de calcio y boro. Fortalece paredes celulares, mejora la absorción de nutrientes e incrementa la productividad de cultivos. Suspensión foliar e Hidro solución. Contacto: WhatsApp 0963518696 - CGS DEL ECUADOR"
+    "beneficios": "Nutrición con Calcio y Boro efectiva, además de Nitrógeno y micronutrientes. Eficiencia significativamente superior en comparación con fuentes convencionales. Disminuye el aborto de flores, aumenta número de vainas. Aditivos bio-efectivos para absorción de nutrientes independiente del clima. Compatible con la gran mayoría de fitosanitarios.",
+"composicion": "Nitrógeno 144 g/lt, Calcio 224 g/lt, Magnesio 16 g/lt, Boro 32 g/lt, Cobre 0.8 g/lt, Hierro 1.6 g/lt, Manganeso 1.6 g/lt, Molibdeno 0.016 g/lt, Zinc 4.8 g/lt. Densidad: 1.6 g/cm³, pH: 2.8, Color: Verde.",
+"uso": "Suspensión foliar para fertilización foliar. Cultivos extensivos: Soja/Colza 1-2 l/ha en floración; Girasol 1.5-2 l/ha en llenado de granos. Cultivos intensivos: Hortalizas en general 3-5 l/ha a partir de floración. Presentación: 20 litros."
   }
 },
 {
@@ -111,9 +111,9 @@
   "presentacion": "20 ltrs",
   "imagen": "https://i.imgur.com/RjJuZHi.jpeg",
   "detalleModal": {
-    "beneficios": "Estimula el crecimiento y desarrollo vegetativo. Mejora la absorción en micronutrientes y fortalece sistemas radiculares. Aumenta la resistencia al estrés biótico y abiótico. Incrementa la productividad y utilidades de cultivos. Favorece la estabilidad isoenérgica y mejora la eficacia del cultivo. Afecta en la tasa lucrativa de látex y rentabilidad de origen mineral por betaínas, azúcares, ácidos halogenados circulares y sumarios. Mejora la asimilación de nutrientes 80% en muy volátil T.R.T en íglifos para gasto completo.",
-    "composicion": "HMigem Tratil (%) 76 g/l, HMigem Pirtss (%) 75 g/l, Nitrógeno (Urea+ (N)) 271.8 g/l, Ácidos aminados (CAA) 298 g/l, Potasio (K2O) 155 g/l, Magnesio (MgK) 79.5 g/l, Azufre (S) 2.3 g/l, Boro (B) 1.8 g/l, Cobre (Cu) 2.8 g/l, Zinc (Zn) 3.5 g/l, Antioxidantes Sper (O.T) 30.5 g/l, Molibdeno 1.4 u/ml, Ácidos Graseosos (T7) 319 g/l, Ácidos Graseosos 731 g/l, Carbono Orgánico 318 g/l",
-    "uso": "Aplicación foliar o fertirriego en todas las etapas del cultivo. Modo de acción: Mejora la asimilación de nutrientes, fortalece sistemas radiculares e incrementa la productividad. Dosis: 2 l/100 l de agua. Precauciones y advertencias: Leer etiqueta antes de usar producto. Distribuido por: CGS DEL ECUADOR. WhatsApp: 0963518696"
+    "beneficios": "Estimula el crecimiento y desarrollo vegetativo. Mejora la absorción de nutrientes y fortalece el sistema radicular. Aumenta la resistencia al estrés biótico y abiótico. Incrementa la productividad de los cultivos. Producto 100% natural con nula toxicidad en mamíferos y nula fitotoxicidad.",
+    "composicion": "Nitrógeno Total 70 g/l, Fósforo Asimilable 210 g/l, Potasio soluble 70 g/l, Magnesio 10.5 g/l, Azufre 3.5 g/l, Boro 3.5 g/l, Cobre 2.8 g/l, Zinc 3.5 g/l, Aminoácidos libres 28.0 g/l, Ácidos Húmicos 525 g/l, Ácidos Fúlvicos 149 g/l, Carbono Orgánico 315 g/l, Materia orgánica de extractos de Lamiaceae 80%.",
+    "uso": "Aplicación foliar fuente de fósforo y aminoácidos. Relación NPK 1:3:1 óptima para gran variedad de cultivos. Presentación: Envases plásticos de 20 L y 200 L. Vida útil: 2 años desde la fecha de fabricación."
   }
 }
 ]
