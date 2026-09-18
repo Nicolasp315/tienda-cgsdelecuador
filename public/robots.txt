@@ -1,4 +1,12 @@
+# Permitir que todos los motores de búsqueda rastreen el sitio
 User-agent: *
 Allow: /
 
-Sitemap: https://tusitio.com/sitemap.xml
+# Ocultar archivos o carpetas técnicas que no necesitan ser indexadas
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /package.json
+Disallow: /package-lock.json
+
+# Ruta oficial del mapa del sitio para facilitar la indexación
+Sitemap: https://cgsdelecuador.com/sitemap.xml
