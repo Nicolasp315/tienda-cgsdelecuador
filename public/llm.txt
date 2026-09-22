@@ -1,13 +1,18 @@
 # CGS Del Ecuador
 
-> CGS Del Ecuador es una empresa dedicada a la comercialización de bioestimulantes agrícolas, fertilizantes y asesoría técnica especializada en Ecuador.
+CGS Del Ecuador es una empresa ecuatoriana especializada en soluciones de nutrición vegetal, abonos orgánicos bioestimulantes y acondicionadores de suelo. Ofrecemos asesoría técnica especializada liderada por Ingenieros Zamoranos para optimizar la salud de los cultivos, combinando formulaciones de alta efectividad con visitas de campo y análisis fitosanitarios para elevar la productividad agrícola.
 
-## Secciones Principales
+## Páginas Principales
 
-- [Catálogo de Productos](https://cgsdelecuador.com/productos.html): Información sobre Bioscorplus, CalcioCorplus y nutrición vegetal.
-- [Servicios](https://cgsdelecuador.com/servicios.html): Visita técnica Zamorana y análisis de suelos.
-- [Contacto](https://cgsdelecuador.com/index.html#contacto): Información de atención e email oficial.
+- [Inicio | CGS Del Ecuador](https://cgsdelecuador.com/index.html): Página principal de CGS Del Ecuador. Presentación de nuestras soluciones integrales para el campo, abonos orgánicos bioestimulantes, fertilizantes líquidos y la propuesta de valor respaldada por asesoría Zamorana.
 
-## Detalles de Productos (Opcional)
+## Productos y Guías Educativas
 
-- [Ficha Técnica Bioscorplus](https://cgsdelecuador.com/docs/bioscorplus.md): Detalles de composición y dosis.
+- [Catálogo de Abono Orgánico Bioestimulante y Fertilizantes | CGS Del Ecuador](https://cgsdelecuador.com/productos.html): Catálogo técnico completo de insumos agrícolas, incluyendo abonos orgánicos bioestimulantes, acondicionadores de suelo y fertilizantes líquidos diseñados para potenciar el rendimiento de tus cultivos.
+- [Abono Orgánico Bioestimulante y Nutrición Vegetal | CGS Del Ecuador](https://cgsdelecuador.com/bioestimulantes.html): Guía técnica y educativa sobre el impacto del abono orgánico bioestimulante como acondicionador de suelo. Explica sus beneficios fisiológicos en el desarrollo radicular, la nutrición vegetal, la floración y el cuaje del fruto.
+
+## Servicios
+
+- [Servicios Agrícolas: Visitas Técnicas y Análisis de Suelo | CGS Del Ecuador](https://cgsdelecuador.com/servicios.html): Servicios especializados de Visita Técnica Zamorana en campo y Análisis de Suelo para diagnosticar las necesidades del terreno y diseñar planes de nutrición vegetal a medida.
+
+---
