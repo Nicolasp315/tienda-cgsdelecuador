@@ -1,0 +1,13 @@
+# CGS Del Ecuador
+
+> CGS Del Ecuador es una empresa dedicada a la comercialización de bioestimulantes agrícolas, fertilizantes y asesoría técnica especializada en Ecuador.
+
+## Secciones Principales
+
+- [Catálogo de Productos](https://cgsdelecuador.com/productos.html): Información sobre Bioscorplus, CalcioCorplus y nutrición vegetal.
+- [Servicios](https://cgsdelecuador.com/servicios.html): Visita técnica Zamorana y análisis de suelos.
+- [Contacto](https://cgsdelecuador.com/index.html#contacto): Información de atención e email oficial.
+
+## Detalles de Productos (Opcional)
+
+- [Ficha Técnica Bioscorplus](https://cgsdelecuador.com/docs/bioscorplus.md): Detalles de composición y dosis.
