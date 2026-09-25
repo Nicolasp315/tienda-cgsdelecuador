@@ -56,10 +56,55 @@ body {
   object-fit: cover;
 }
 
-.empresa-info h1 {
+.empresa-nombre {
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 2px;
+}
+
+/* HERO PÁGINA DE INICIO */
+.hero-inicio {
+  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+  color: var(--white);
+  padding: 55px 0;
+}
+
+.hero-title {
+  font-size: 2.1rem;
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  max-width: 750px;
+  margin: 0 auto 25px auto;
+  opacity: 0.95;
+  line-height: 1.55;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  text-decoration: none;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+}
+
+.hero-actions .hero-btn:first-child {
+  background: var(--white);
+  color: var(--primary-dark);
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 1.6rem;
+  }
 }
 
 .empresa-info p {
@@ -370,6 +415,46 @@ body {
   border-radius: 8px;
   text-align: center;
   border: 1px solid #c8e6c9;
+}
+
+/* PREGUNTAS FRECUENTES */
+.faq-section {
+  padding: 40px 0;
+  background: var(--white);
+}
+
+.faq-section h2 {
+  text-align: center;
+  color: var(--primary-dark);
+  font-size: 1.7rem;
+  margin-bottom: 25px;
+}
+
+.faq-item {
+  max-width: 850px;
+  margin: 0 auto 18px auto;
+  background: #f9f9f9;
+  border-left: 4px solid var(--primary);
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+
+.faq-item h3 {
+  color: var(--primary-dark);
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.faq-item p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.faq-item a {
+  color: var(--primary);
+  font-weight: 600;
 }
 
 /* FOOTER */
