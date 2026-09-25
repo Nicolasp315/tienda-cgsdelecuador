@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#f4f8f5"/>
+  <rect x="2" y="2" width="596" height="396" fill="none" stroke="#c8e6c9" stroke-width="4" stroke-dasharray="12 8"/>
+  <text x="300" y="185" font-family="Segoe UI, Tahoma, Geneva, Verdana, sans-serif" font-size="60" text-anchor="middle" fill="#2e7d32">🌱</text>
+  <text x="300" y="240" font-family="Segoe UI, Tahoma, Geneva, Verdana, sans-serif" font-size="22" font-weight="600" text-anchor="middle" fill="#1b5e20">CGS Del Ecuador</text>
+  <text x="300" y="270" font-family="Segoe UI, Tahoma, Geneva, Verdana, sans-serif" font-size="15" text-anchor="middle" fill="#666666">Imagen no disponible</text>
+</svg>

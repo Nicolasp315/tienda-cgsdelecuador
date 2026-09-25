@@ -53,7 +53,7 @@ function mostrarProductos(lista) {
         <img src="${producto.imagen}" 
              alt="${producto.nombre} - ${categoriaBadge} | CGS Del Ecuador" 
              class="producto-imagen" 
-             onerror="this.src='https://via.placeholder.com/300x220?text=Sin+Imagen'">
+             onerror="this.src='img/placeholder.svg'">
         <div class="producto-info">
           <span class="producto-categoria">${categoriaBadge}</span>
           <h3 class="producto-nombre">${producto.nombre}</h3>
@@ -90,7 +90,7 @@ function verDetalleProducto(index) {
   const presentacionHTML = prod.presentacion ? `<p style="margin: 4px 0; font-size: 0.95rem;"><strong>Presentación disponible:</strong> ${prod.presentacion}</p>` : '';
 
   detalleContainer.innerHTML = `
-    <img src="${prod.imagen}" alt="${prod.nombre}" style="width:100%; max-height:200px; object-fit:contain; margin-bottom:15px;" onerror="this.src='https://via.placeholder.com/300x220?text=Sin+Imagen'">
+    <img src="${prod.imagen}" alt="${prod.nombre}" style="width:100%; max-height:200px; object-fit:contain; margin-bottom:15px;" onerror="this.src='img/placeholder.svg'">
     <span class="producto-categoria" style="display:inline-block; margin-bottom: 8px;">${prod.categoria || 'General'}</span>
     <h2 style="margin: 5px 0 10px 0; color: #2e7d32; font-size: 1.4rem;">${prod.nombre}</h2>
     ${presentacionHTML}

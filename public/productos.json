@@ -5,7 +5,7 @@
     "categoria": "Servicios",
     "descripcionCorta": "Visita técnica especializada",
     "presentacion": "",
-    "imagen": "https://i.imgur.com/9UCa7qP.jpeg",
+    "imagen": "img/producto-visita-tecnica.jpg",
     "detalleModal": {
       "beneficios": "Diagnóstico profesional in situ, identificación temprana de deficiencias nutricionales y optimización de tu plan de fertilización.",
       "composicion": "A cargo de profesionales e ingenieros graduados de la Escuela Agrícola Panamericana El Zamorano.",
@@ -18,7 +18,7 @@
     "categoria": "Servicios",
     "descripcionCorta": "Diagnóstico químico y físico completo de terreno",
     "presentacion": "",
-    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz7md-ZUOdLpP85ManESmrTl7xrZ0pLGjR7gQSnIFBWpgErtmvcvV5iKsv&s=10",
+    "imagen": "img/servicio-analisis-suelo.jpg",
     "detalleModal": {
       "beneficios": "Permite conocer exactamente qué nutrientes le faltan a tu suelo para evitar sobrecostos en fertilizantes innecesarios.",
       "composicion": "Evaluación química (pH, materia orgánica, N, P, K, microelementos) y recomendaciones de enmienda.",
@@ -31,7 +31,7 @@
     "categoria": "Cultivos",
     "descripcionCorta": "Fórmula especial de Inicio",
     "presentacion": "20 ltrs",
-    "imagen": "https://i.imgur.com/rvjJJIL.jpeg",
+    "imagen": "img/producto-bioscorplus.jpg",
     "detalleModal": {
       "beneficios": "Promueve la formación intensiva de raicillas nuevas, mejora el enraizamiento post-trasplante y prepara la planta para una absorción eficiente de nutrientes.",
       "composicion": "Complejo orgánico con bioestimulantes, aminoácidos libres y extractos altamente concentrados.",
@@ -44,7 +44,7 @@
     "categoria": "Cultivos",
     "descripcionCorta": "Fórmula especial para Acondicionar suelo y Raíces",
     "presentacion": "20 ltrs",
-    "imagen": "https://i.imgur.com/aINfMZ6.jpeg",
+    "imagen": "img/producto-humicorplus.jpg",
     "detalleModal": {
       "beneficios": "Descompacta el suelo, incrementa la capacidad de retención de humedad y maximiza la disponibilidad biológica de los fertilizantes.",
       "composicion": "Ácidos húmicos y fúlvicos de alta solubilidad e interactividad en la rizosfera.",
@@ -57,7 +57,7 @@
     "categoria": "Cultivos",
     "descripcionCorta": "Fórmula especial de Desarrollo",
     "presentacion": "20 ltrs",
-    "imagen": "https://i.imgur.com/gCal47w.jpeg",
+    "imagen": "img/producto-algascorplus.jpg",
     "detalleModal": {
       "beneficios": "Supera situaciones de estrés hídrico o térmico, activa el crecimiento foliar y potencia la floración y el cuajado de frutos.",
       "composicion": "Extractos puros de algas marinas enriquecidos con micronutrientes esenciales.",
@@ -70,7 +70,7 @@
   "categoria": "Cultivos",
   "descripcionCorta": "Fuente líquida de calcio nitratado",
   "presentacion": "20 ltrs",
-  "imagen": "https://i.imgur.com/X4KqssB.jpeg",
+  "imagen": "img/producto-calciocorplus.jpg",
   "detalleModal": {
     "beneficios": "Aumenta el rendimiento y la firmeza del fruto, mejora la vida postcosecha y fortalece la resistencia celular de la planta frente a enfermedades.",
     "composicion": "Calcio Nitratado Líquido (CaO 26.5%, Nitrógeno Total 15.5%: N-Nítrico 14.5% y N-Amoniacal 1.1%).",
@@ -83,7 +83,7 @@
   "categoria": "Cultivos",
   "descripcionCorta": "Fórmula Especial de Bioestimulante",
   "presentacion": "20 ltrs",
-  "imagen": "https://i.imgur.com/qvvbFNL.jpeg",
+  "imagen": "img/producto-poterocorplus.jpg",
   "detalleModal": {
     "beneficios": "Estimula el crecimiento y desarrollo vegetativo. Mejora la absorción de nutrientes y fortalece el sistema radicular. Aumenta la resistencia al estrés biótico y abiótico. Incrementa la productividad y la calidad de los cultivos. Favorece la actividad microbiana y mejora la estructura del suelo.",
     "composicion": "Nitrógeno Total 70 g/l, Fósforo Asimilable 210 g/l, Potasio soluble 70 g/l, Magnesio 10.5 g/l, Azufre 3.5 g/l, Boro 3.5 g/l, Cobre 2.8 g/l, Zinc 3.5 g/l, Aminoácidos libres 28.0 g/l, Ácidos Húmicos 525 g/l, Ácidos Fúlvicos 149 g/l, Carbono Orgánico 315 g/l.",
@@ -96,7 +96,7 @@
   "categoria": "Cultivos",
   "descripcionCorta": "Nutrición Efectiva y Segura de Calcio y Boro para todo tipo de Cultivos",
   "presentacion": "20 ltrs",
-  "imagen": "https://i.imgur.com/MbuLhlj.jpeg",
+  "imagen": "img/producto-calciiborcorplus.jpg",
   "detalleModal": {
     "beneficios": "Nutrición con Calcio y Boro efectiva, además de Nitrógeno y micronutrientes. Eficiencia significativamente superior en comparación con fuentes convencionales. Disminuye el aborto de flores, aumenta número de vainas. Aditivos bio-efectivos para absorción de nutrientes independiente del clima. Compatible con la gran mayoría de fitosanitarios.",
 "composicion": "Nitrógeno 144 g/lt, Calcio 224 g/lt, Magnesio 16 g/lt, Boro 32 g/lt, Cobre 0.8 g/lt, Hierro 1.6 g/lt, Manganeso 1.6 g/lt, Molibdeno 0.016 g/lt, Zinc 4.8 g/lt. Densidad: 1.6 g/cm³, pH: 2.8, Color: Verde.",
@@ -109,7 +109,7 @@
   "categoria": "Cultivos",
   "descripcionCorta": "Fórmula Especial de Bioestimulante",
   "presentacion": "20 ltrs",
-  "imagen": "https://i.imgur.com/RjJuZHi.jpeg",
+  "imagen": "img/producto-fungicorplus.jpg",
   "detalleModal": {
     "beneficios": "Estimula el crecimiento y desarrollo vegetativo. Mejora la absorción de nutrientes y fortalece el sistema radicular. Aumenta la resistencia al estrés biótico y abiótico. Incrementa la productividad de los cultivos. Producto 100% natural con nula toxicidad en mamíferos y nula fitotoxicidad.",
     "composicion": "Nitrógeno Total 70 g/l, Fósforo Asimilable 210 g/l, Potasio soluble 70 g/l, Magnesio 10.5 g/l, Azufre 3.5 g/l, Boro 3.5 g/l, Cobre 2.8 g/l, Zinc 3.5 g/l, Aminoácidos libres 28.0 g/l, Ácidos Húmicos 525 g/l, Ácidos Fúlvicos 149 g/l, Carbono Orgánico 315 g/l, Materia orgánica de extractos de Lamiaceae 80%.",
