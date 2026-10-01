@@ -30,7 +30,7 @@
     "nombre": "Bioscorplus",
     "categoria": "Cultivos",
     "descripcionCorta": "Fórmula especial de Inicio",
-    "presentacion": "20 ltrs",
+    "presentacion": "20 L",
     "imagen": "img/producto-bioscorplus.jpg",
     "detalleModal": {
       "beneficios": "Promueve la formación intensiva de raicillas nuevas, mejora el enraizamiento post-trasplante y prepara la planta para una absorción eficiente de nutrientes.",
@@ -43,7 +43,7 @@
     "nombre": "Humicorplus",
     "categoria": "Cultivos",
     "descripcionCorta": "Fórmula especial para Acondicionar suelo y Raíces",
-    "presentacion": "20 ltrs",
+    "presentacion": "20 L",
     "imagen": "img/producto-humicorplus.jpg",
     "detalleModal": {
       "beneficios": "Descompacta el suelo, incrementa la capacidad de retención de humedad y maximiza la disponibilidad biológica de los fertilizantes.",
@@ -56,7 +56,7 @@
     "nombre": "Algascorplus",
     "categoria": "Cultivos",
     "descripcionCorta": "Fórmula especial de Desarrollo",
-    "presentacion": "20 ltrs",
+    "presentacion": "20 L",
     "imagen": "img/producto-algascorplus.jpg",
     "detalleModal": {
       "beneficios": "Supera situaciones de estrés hídrico o térmico, activa el crecimiento foliar y potencia la floración y el cuajado de frutos.",
@@ -69,7 +69,7 @@
   "nombre": "CalcioCorplus",
   "categoria": "Cultivos",
   "descripcionCorta": "Fuente líquida de calcio nitratado",
-  "presentacion": "20 ltrs",
+  "presentacion": "20 L",
   "imagen": "img/producto-calciocorplus.jpg",
   "detalleModal": {
     "beneficios": "Aumenta el rendimiento y la firmeza del fruto, mejora la vida postcosecha y fortalece la resistencia celular de la planta frente a enfermedades.",
@@ -82,25 +82,25 @@
   "nombre": "PotreroCorplus",
   "categoria": "Cultivos",
   "descripcionCorta": "Fórmula Especial de Bioestimulante",
-  "presentacion": "20 ltrs",
+  "presentacion": "20 L",
   "imagen": "img/producto-poterocorplus.jpg",
   "detalleModal": {
-    "beneficios": "Estimula el crecimiento y desarrollo vegetativo. Mejora la absorción de nutrientes y fortalece el sistema radicular. Aumenta la resistencia al estrés biótico y abiótico. Incrementa la productividad y la calidad de los cultivos. Favorece la actividad microbiana y mejora la estructura del suelo.",
-    "composicion": "Nitrógeno Total 70 g/l, Fósforo Asimilable 210 g/l, Potasio soluble 70 g/l, Magnesio 10.5 g/l, Azufre 3.5 g/l, Boro 3.5 g/l, Cobre 2.8 g/l, Zinc 3.5 g/l, Aminoácidos libres 28.0 g/l, Ácidos Húmicos 525 g/l, Ácidos Fúlvicos 149 g/l, Carbono Orgánico 315 g/l.",
-    "uso": "Aplicación foliar fuente de fósforo y aminoácidos. Relación NPK 1:3:1 óptima para gran variedad de cultivos. Aplicar en estados iniciales y en fructificación. Presentación: Envases plásticos de 20 L y 200 L."
+    "beneficios": "Impulsa el desarrollo vegetativo, el sistema radicular y la absorción de nutrientes. Eleva la resistencia al estrés biótico y abiótico, la productividad y la actividad microbiana del suelo.",
+    "composicion": "Nitrógeno Total 70 g/l, Fósforo Asimilable 210 g/l, Potasio soluble 70 g/l, Ácidos Húmicos 525 g/l, Ácidos Fúlvicos 149 g/l, Aminoácidos libres 28.0 g/l.",
+    "uso": "Aplicación foliar, fuente de fósforo y aminoácidos. Relación NPK 1:3:1. Aplicar en estados iniciales y en fructificación."
   }
 },
 {
   "id": "CAL-002",
   "nombre": "CalciBorCorPlus",
   "categoria": "Cultivos",
-  "descripcionCorta": "Nutrición Efectiva y Segura de Calcio y Boro para todo tipo de Cultivos",
-  "presentacion": "20 ltrs",
+  "descripcionCorta": "Fórmula especial de Calcio y Boro",
+  "presentacion": "20 L",
   "imagen": "img/producto-calciiborcorplus.jpg",
   "detalleModal": {
-    "beneficios": "Nutrición con Calcio y Boro efectiva, además de Nitrógeno y micronutrientes. Eficiencia significativamente superior en comparación con fuentes convencionales. Disminuye el aborto de flores, aumenta número de vainas. Aditivos bio-efectivos para absorción de nutrientes independiente del clima. Compatible con la gran mayoría de fitosanitarios.",
-"composicion": "Nitrógeno 144 g/lt, Calcio 224 g/lt, Magnesio 16 g/lt, Boro 32 g/lt, Cobre 0.8 g/lt, Hierro 1.6 g/lt, Manganeso 1.6 g/lt, Molibdeno 0.016 g/lt, Zinc 4.8 g/lt. Densidad: 1.6 g/cm³, pH: 2.8, Color: Verde.",
-"uso": "Suspensión foliar para fertilización foliar. Cultivos extensivos: Soja/Colza 1-2 l/ha en floración; Girasol 1.5-2 l/ha en llenado de granos. Cultivos intensivos: Hortalizas en general 3-5 l/ha a partir de floración. Presentación: 20 litros."
+    "beneficios": "Calcio, Boro, Nitrógeno y micronutrientes con eficiencia superior a fuentes convencionales. Disminuye el aborto de flores y aumenta el número de vainas. Aditivos bio-efectivos para absorción de nutrientes. Compatible con la gran mayoría de fitosanitarios.",
+"composicion": "Calcio 224 g/lt, Boro 32 g/lt, Nitrógeno 144 g/lt, Magnesio 16 g/lt. Densidad: 1.6 g/cm³, pH: 2.8.",
+"uso": "Suspensión foliar. Cultivos extensivos: Soja/Colza 1-2 l/ha en floración; Girasol 1.5-2 l/ha en llenado de granos. Intensivos: Hortalizas 3-5 l/ha desde floración."
   }
 },
 {
@@ -108,12 +108,12 @@
   "nombre": "FungiCorPlus",
   "categoria": "Cultivos",
   "descripcionCorta": "Fórmula Especial de Bioestimulante",
-  "presentacion": "20 ltrs",
+  "presentacion": "20 L",
   "imagen": "img/producto-fungicorplus.jpg",
   "detalleModal": {
-    "beneficios": "Estimula el crecimiento y desarrollo vegetativo. Mejora la absorción de nutrientes y fortalece el sistema radicular. Aumenta la resistencia al estrés biótico y abiótico. Incrementa la productividad de los cultivos. Producto 100% natural con nula toxicidad en mamíferos y nula fitotoxicidad.",
-    "composicion": "Nitrógeno Total 70 g/l, Fósforo Asimilable 210 g/l, Potasio soluble 70 g/l, Magnesio 10.5 g/l, Azufre 3.5 g/l, Boro 3.5 g/l, Cobre 2.8 g/l, Zinc 3.5 g/l, Aminoácidos libres 28.0 g/l, Ácidos Húmicos 525 g/l, Ácidos Fúlvicos 149 g/l, Carbono Orgánico 315 g/l, Materia orgánica de extractos de Lamiaceae 80%.",
-    "uso": "Aplicación foliar fuente de fósforo y aminoácidos. Relación NPK 1:3:1 óptima para gran variedad de cultivos. Presentación: Envases plásticos de 20 L y 200 L. Vida útil: 2 años desde la fecha de fabricación."
+    "beneficios": "Impulsa el desarrollo vegetativo, el sistema radicular y la absorción de nutrientes. Eleva la resistencia al estrés biótico y abiótico y la productividad. 100% natural, con nula toxicidad en mamíferos y nula fitotoxicidad.",
+    "composicion": "Materia orgánica de extractos de Lamiaceae 80%. Nitrógeno Total 70 g/l, Fósforo Asimilable 210 g/l, Potasio soluble 70 g/l, Ácidos Húmicos 525 g/l, Aminoácidos libres 28.0 g/l.",
+    "uso": "Aplicación foliar, fuente de fósforo y aminoácidos. Relación NPK 1:3:1. Vida útil: 2 años desde la fecha de fabricación."
   }
 }
 ]

@@ -7,6 +7,9 @@
   --text: #333333;
   --text-muted: #666666;
   --white: #ffffff;
+  /* Color del anillo de foco. Se reasigna por superficie: un verde oscuro
+     sobre el header verde oscuro sería invisible (1:1). */
+  --focus: var(--primary-dark);
 }
 
 * {
@@ -16,9 +19,79 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Cualquier regla de display del autor gana al atributo hidden por defecto del
+   navegador, y el atributo deja de servir. Este lo vuelve autoritativo. */
+[hidden] {
+  display: none !important;
+}
+
 body {
   background-color: var(--bg-light);
   color: var(--text);
+  /* Ningún contenedor de texto tiene ancho fijo, así que la única defense
+     contra una palabra más larga que su caja es esto. */
+  overflow-wrap: break-word;
+  accent-color: var(--primary);
+}
+
+::selection {
+  background: #c8e6c9;
+  color: #143d16;
+}
+
+/* FOCUS VISIBLE
+   No se elimina el anillo por defecto del navegador: se sustituye por uno que
+   sí se ve sobre las superficies clara y oscura de este sitio. */
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.header,
+.hero-inicio,
+.seccion-titulo,
+.footer {
+  --focus: #ffffff;
+}
+
+.hero-actions .hero-btn:first-child,
+.ficha-cta {
+  --focus: var(--primary-dark);
+}
+
+/* Utilidad para texto que solo existe para lectores de pantalla. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Enlace de salto: primero en el DOM, fuera de pantalla hasta recibir foco. */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -70px;
+  z-index: 2000;
+  background: var(--white);
+  color: var(--primary-dark);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 11px 18px;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 .container {
@@ -112,6 +185,10 @@ body {
   opacity: 0.9;
 }
 
+.empresa-info {
+  min-width: 0;
+}
+
 .header-right {
   display: flex;
   align-items: center;
@@ -134,8 +211,10 @@ body {
   background: rgba(255, 255, 255, 0.3);
 }
 
+/* Fill #0F7B3E, no #25d366: el verde de WhatsApp daba 1.98:1 con texto blanco
+   (necesita 4.5:1). Mismo tono, dos pasos más profundo. Medido: 5.35:1. */
 .btn-cotizar-general {
-  background: #25d366;
+  background: #0F7B3E;
   color: var(--white);
   border: none;
   padding: 10px 16px;
@@ -146,7 +225,7 @@ body {
 }
 
 .btn-cotizar-general:hover {
-  background: #1eb855;
+  background: #0B6333;
 }
 
 
@@ -161,6 +240,9 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 15px;
+  /* Ancla de scroll para el carrusel: hace que offsetLeft de cada tarjeta sea
+     relativo al propio contenedor y no a la página. */
+  position: relative;
 }
 
 .valor-card {
@@ -171,6 +253,7 @@ body {
   border-radius: 8px;
   border-left: 4px solid var(--primary);
   box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+  min-width: 0;
 }
 
 .valor-icono {
@@ -178,7 +261,15 @@ body {
   margin-right: 12px;
 }
 
-.valor-info h3 {
+.valor-info {
+  min-width: 0;
+}
+
+/* En index.html esta sección cuelga de un h2, así que sus tarjetas van en h3.
+   En productos.html no hay h2 intermedio: ahí las tarjetas son h2. Ambos
+   niveles comparten estilo. */
+.valor-info h3,
+.valor-info h2 {
   margin-bottom: 4px;
   color: var(--primary);
   font-size: 1rem;
@@ -304,6 +395,10 @@ body {
   padding-top: 10px;
 }
 
+.producto-footer--detalle {
+  justify-content: flex-end;
+}
+
 .producto-unidad {
   font-size: 0.8rem;
   color: var(--text-muted);
@@ -323,7 +418,86 @@ body {
   background: var(--primary-dark);
 }
 
+.btn-agregar--ancho {
+  width: 100%;
+  text-align: center;
+}
+
+/* ESTADOS DEL CATÁLOGO: cargando, vacío y error
+   Antes no existían: la clase .loading/.spinner del HTML no estaba en la hoja
+   de estilos, así que el estado de carga era texto suelto sin indicador, y el
+   error no tenía ni reintento ni enlace. */
+.loading {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 48px 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.spinner {
+  width: 34px;
+  height: 34px;
+  border: 3px solid #d8e6da;
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: girar 0.9s linear infinite;
+}
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+.catalogo-estado {
+  grid-column: 1 / -1;
+  background: var(--white);
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 28px 22px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.catalogo-estado__titulo {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+}
+
+.catalogo-estado__texto {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  max-width: 48ch;
+  margin: 0 auto 20px;
+}
+
+.catalogo-estado__acciones {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.resultados-catalogo {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0 0 18px;
+  /* Altura mínima reservada: si no, la grilla salta al aparecer el texto. */
+  min-height: 1.3em;
+}
+
 /* MODAL */
+/* El overlay es el UNICO contenedor de scroll. Con `align-items: center` el
+   contenido que excede la altura se recortaba arriba y abajo sin forma de
+   llegar (medido a 390x844: 3 de 9 fichas, scrollTop clavado en 0).
+   `flex-start` + `overflow-y: auto` lo hace alcanzable; `margin: auto` en el
+   hijo mantiene centrados los modales cortos. */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -333,9 +507,15 @@ body {
   background: rgba(0,0,0,0.5);
   display: none;
   justify-content: center;
-  align-items: center;
-  z-index: 1000;
+  align-items: flex-start;
+  /* Por encima del float de WhatsApp (1000) y del skip-link (2000): con
+     z-index igual el float, que va despues en el DOM, se pintaba encima
+     del CTA del modal. */
+  z-index: 2100;
   padding: 15px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
 }
 
 .modal-overlay.active {
@@ -349,6 +529,9 @@ body {
   max-width: 500px;
   width: 100%;
   position: relative;
+  /* Centro cuando sobra espacio, sin recortar el borde superior cuando no. */
+  margin: auto;
+  flex-shrink: 0;
 }
 
 .modal-close {
@@ -359,6 +542,96 @@ body {
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
+  /* El ✕ medía ~19px: por debajo del mínimo de 24px de objetivo táctil. */
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+.modal-close:hover {
+  background: #f0f0f0;
+  color: var(--text);
+}
+
+/* FICHA TÉCNICA
+   Estas clases replican exactamente los estilos en línea que tenía el modal
+   en script.js, para que el contenido se construya con nodos y no con
+   innerHTML (texto de productos.json sin escapar). */
+.ficha-imagen {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.ficha-badge {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.ficha-titulo {
+  margin: 5px 0 10px 0;
+  color: #2e7d32;
+  font-size: 1.4rem;
+  overflow-wrap: break-word;
+}
+
+.ficha-presentacion {
+  margin: 4px 0;
+  font-size: 0.95rem;
+}
+
+.ficha-separador {
+  margin: 12px 0;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+.ficha-texto {
+  color: #444;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.ficha-dato {
+  margin: 8px 0;
+  font-size: 0.95rem;
+}
+
+.ficha-dato--secundario {
+  font-size: 0.9rem;
+}
+
+/* OBJETIVOS TÁCTILES
+   Requisito: 44×44 CSS px en todo control interactivo. Se fija con min-height
+   y no con más padding, para que no dependa de la métrica de la fuente. Antes:
+   .btn-categoría ~35px, .nav-link-header ~35px, .btn-agregar ~28px, todos por
+   debajo del mínimo. */
+.btn-agregar,
+.btn-categoria,
+.nav-link-header,
+.btn-cotizar-general,
+.skip-link,
+.btn-pausa-carrusel {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ficha-cta {
+  display: inline-flex;
+  width: 100%;
+  margin-top: 18px;
+  padding: 12px;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
 }
 
 /* SECCIÓN EDUCATIVA (BIOESTIMULANTES.HTML) */
@@ -472,9 +745,17 @@ body {
   margin-bottom: 20px;
 }
 
-.footer-section h3 {
+/* Antes eran <h3>: 1.17em/negrita sobre los 0.85rem del footer. Se conservan
+   esas medidas para que el cambio de etiqueta no se vea. */
+.footer-heading {
   color: var(--white);
   margin-bottom: 8px;
+  font-size: 1.17em;
+  font-weight: bold;
+}
+
+.footer-section {
+  min-width: 0;
 }
 
 .footer-bottom {
@@ -484,13 +765,16 @@ body {
 }
 
 /* Botón Flotante de WhatsApp */
+/* #0F7B3E en vez de #25d366: el glifo blanco pasaba de 1.98:1 a 5.35:1, y el
+   disco contra el fondo de pagina (#f4f8f5) de 1.85:1 a 4.99:1. Ambos
+   superan el 3:1 de componente no textual (WCAG 1.4.11). */
 .whatsapp-float {
   position: fixed;
   width: 58px;
   height: 58px;
   bottom: 24px;
   right: 24px;
-  background-color: #25d366;
+  background-color: #0F7B3E;
   color: #fff;
   border-radius: 50px;
   text-align: center;
@@ -504,7 +788,7 @@ body {
 
 .whatsapp-float:hover {
   transform: scale(1.08);
-  background-color: #20ba5a;
+  background-color: #0B6333;
 }
 
 /* Carrusel Deslizable para los 3 recuadros en Móvil */
@@ -565,3 +849,102 @@ body {
       .slider-btn.prev { left: 5px; }
       .slider-btn.next { right: 5px; }
     }
+
+/* Banda de título con degradado (era un style en línea en productos.html) */
+.seccion-titulo {
+  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+  color: var(--white);
+  padding: 35px 0;
+  text-align: center;
+}
+
+.seccion-titulo__titulo {
+  font-size: 1.9rem;
+  margin-bottom: 8px;
+}
+
+.seccion-titulo__bajada {
+  font-size: 0.98rem;
+  opacity: 0.95;
+}
+
+/* Control de pausa del carrusel: solo existe mientras el carrusel avanza solo. */
+.carrusel-controles {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.btn-pausa-carrusel {
+  font-size: 0.78rem;
+  padding: 5px 12px;
+}
+
+@media (max-width: 768px) {
+  .btn-pausa-carrusel {
+    display: inline-block;
+  }
+}
+
+@media (min-width: 769px) {
+  /* En escritorio el trío es una rejilla estática: no hay nada que pausar.
+     Se oculta el contenedor también, o su margin-top deja un hueco visible
+     con el botón ya en display:none. */
+  .btn-pausa-carrusel,
+  .carrusel-controles {
+    display: none;
+  }
+}
+
+/* MOVIMIENTO REDUCIDO
+   El carrusel se auto-desplaza y el scroller usa scroll-behavior: smooth.
+   Con esta preferencia, nada de eso debe moverse sin que el usuario lo pida. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* IMPRESIÓN
+   Las bandas con degradado llevan texto blanco. Sin fondo, al imprimir quedan
+   blancas sobre papel blanco: el H1 y la bajada desaparecen. */
+@media print {
+  .header,
+  .footer,
+  .whatsapp-float,
+  .dots-indicator,
+  .modal-overlay,
+  .filters-section,
+  .resultados-catalogo {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .hero-inicio,
+  .seccion-titulo {
+    background: none !important;
+    color: #000 !important;
+    padding: 0 0 12px;
+  }
+
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+
+  .producto-card,
+  .faq-item,
+  .articulo-bio,
+  .catalogo-estado {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+}

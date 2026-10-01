@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWZJ9JYKYK"></script>
   <script>
@@ -14,8 +16,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+  <!-- Favicon: favicon.ico pesa 1.4 KB contra los 95 KB de logo.jpg -->
+  <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="img/logo.jpg">
 
   <!-- SEO Básico e Indexación -->
@@ -88,7 +90,7 @@
   }
   </script>
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2.1">
   <style>
     .header {
       border-bottom: 2px solid rgba(0, 0, 0, 0.6);
@@ -117,28 +119,30 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
   <!-- HEADER -->
   <header class="header">
     <div class="container">
       <div class="header-content">
         <div class="logo-section">
-          <img src="img/logo.jpg" alt="CGS Del Ecuador Logo" class="logo">
+          <img src="img/logo.jpg" alt="" class="logo">
           <div class="empresa-info">
             <div class="empresa-nombre">CGS DEL ECUADOR</div>
             <p>🌱 Soluciones y Productos para el Campo 🌾</p>
           </div>
         </div>
-        <div class="header-right">
+        <nav class="header-right" aria-label="Principal">
           <a href="index.html" class="nav-link-header">Inicio</a>
           <a href="productos.html" class="nav-link-header">Productos</a>
           <a href="servicios.html" class="nav-link-header">Servicios</a>
-        </div>
+        </nav>
       </div>
     </div>
   </header>
 
   <!-- CONTENIDO PRINCIPAL EDUCATIVO -->
-  <main class="seccion-educativa">
+  <main id="contenido" class="seccion-educativa">
     <div class="container">
       <article class="articulo-bio">
         <h1>¿Qué es el Abono Orgánico Bioestimulante y cómo beneficia a las plantas?</h1>
@@ -238,16 +242,16 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h3>CATÁLOGO AGRÍCOLA</h3>
+          <p class="footer-heading">CATÁLOGO AGRÍCOLA</p>
           <p>Atención directa a productores y distribuidores del campo</p>
         </div>
         <div class="footer-section">
-          <h3>Atención al Cliente</h3>
+          <p class="footer-heading">Atención al Cliente</p>
           <p>📍 Balzar, Guayas, Ecuador</p>
           <p>✉️ contacto@cgsdelecuador.com</p>
         </div>
         <div class="footer-section">
-          <h3>Horarios de Atención</h3>
+          <p class="footer-heading">Horarios de Atención</p>
           <p>Lunes a Viernes: 7:30 AM - 5:00 PM</p>
           <p>Sábados: 8:00 AM - 1:00 PM</p>
         </div>
@@ -258,7 +262,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=2.0"></script>
+  <script src="script.js?v=2.1"></script>
 
   <!-- Botón Flotante WhatsApp -->
   <a href="https://wa.me/593963518696?text=%C2%A1Hola!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20abono%20org%C3%A1nico%20bioestimulante%20para%20mi%20cultivo." 

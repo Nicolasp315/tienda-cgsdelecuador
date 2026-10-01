@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Conexión anticipada a analítica: la etiqueta es async y compite con el
+       CSS y las fotos de producto en la primera carga. -->
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWZJ9JYKYK"></script>
   <script>
@@ -11,11 +18,8 @@
     gtag('config', 'G-TWZJ9JYKYK');
   </script>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+  <!-- Favicon: favicon.ico pesa 1.4 KB contra los 95 KB de logo.jpg -->
+  <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="img/logo.jpg">
 
   <!-- SEO Básico e Indexación -->
@@ -39,7 +43,7 @@
   <meta name="twitter:image" content="https://cgsdelecuador.com/img/logo.jpg">
 
   <!-- Estilos -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2.1">
   <style>
     /* Borde negro para mantener consistencia estética en el encabezado */
     .header {
@@ -159,31 +163,36 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
   <!-- HEADER -->
   <header class="header">
     <div class="container">
       <div class="header-content">
         <div class="logo-section">
-          <img src="img/logo.jpg" alt="CGS Del Ecuador Logo" class="logo">
+          <!-- El nombre ya está en texto visible junto al logo: el alt no lo repite -->
+          <img src="img/logo.jpg" alt="" class="logo">
           <div class="empresa-info">
             <div class="empresa-nombre">CGS DEL ECUADOR</div>
             <p>🌱 Soluciones y Productos para el Campo 🌾</p>
           </div>
         </div>
-        <div class="header-right">
+        <nav class="header-right" aria-label="Principal">
           <a href="index.html" class="nav-link-header">Inicio</a>
-          <a href="productos.html" class="nav-link-header active">Productos</a>
+          <a href="productos.html" class="nav-link-header active" aria-current="page">Productos</a>
           <a href="servicios.html" class="nav-link-header">Servicios</a>
-        </div>
+        </nav>
       </div>
     </div>
   </header>
 
+  <main id="contenido">
+
   <!-- H1 CON KEYWORD PRINCIPAL -->
-  <section style="background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%); color: white; padding: 35px 0;">
-    <div class="container" style="text-align: center;">
-      <h1 style="font-size: 1.9rem; margin-bottom: 8px;">Catálogo de Abono Orgánico Bioestimulante y Fertilizantes</h1>
-      <p style="font-size: 0.98rem; opacity: 0.95;">Marcas de abono orgánico para cultivos en Ecuador: Bioscorplus, Humicorplus, Algascorplus y más. Cotiza con entrega a domicilio a tu provincia.</p>
+  <section class="seccion-titulo">
+    <div class="container">
+      <h1 class="seccion-titulo__titulo">Catálogo de Abono Orgánico Bioestimulante y Fertilizantes</h1>
+      <p class="seccion-titulo__bajada">Marcas de abono orgánico para cultivos en Ecuador: Bioscorplus, Humicorplus, Algascorplus y más. Cotiza con entrega a domicilio a tu provincia.</p>
     </div>
   </section>
 
@@ -194,21 +203,21 @@
         <div class="valor-card">
           <div class="valor-icono">🧪</div>
           <div class="valor-info">
-            <h3>Formulaciones Agrícolas</h3>
+            <h2>Formulaciones Agrícolas</h2>
             <p>Insumos y nutrientes diseñados para maximizar la absorción y el rendimiento de tus cultivos.</p>
           </div>
         </div>
         <div class="valor-card">
           <div class="valor-icono">🌱</div>
           <div class="valor-info">
-            <h3>Abono Orgánico Bioestimulante</h3>
+            <h2>Abono Orgánico Bioestimulante</h2>
             <p>Productos enfocados en enraizamiento, tallos fuertes, floración y mayor llenado de fruto.</p>
           </div>
         </div>
         <div class="valor-card">
           <div class="valor-icono">🚚</div>
           <div class="valor-info">
-            <h3>Envíos Nacionales</h3>
+            <h2>Envíos Nacionales</h2>
             <p>Atención directa en línea y despachos a todas las provincias de Ecuador.</p>
           </div>
         </div>
@@ -219,16 +228,19 @@
   <!-- BUSCADOR Y CATEGORÍAS -->
   <section class="filters-section">
     <div class="container">
-      <div class="categorias-container">
-        <button class="btn-categoria active" onclick="filtrarCategoria('Todas', this)">Todas</button>
-        <button class="btn-categoria" onclick="filtrarCategoria('Hogar', this)">🏡 Hogar</button>
-        <button class="btn-categoria" onclick="filtrarCategoria('Cultivos', this)">🌱 Cultivos</button>
-        <button class="btn-categoria" onclick="filtrarCategoria('Potreros', this)">🌾 Potreros</button>
-        <button class="btn-categoria" onclick="filtrarCategoria('Servicios', this)">⚙️ Servicios</button>
+      <div class="categorias-container" role="group" aria-label="Filtrar por categoría">
+        <button type="button" class="btn-categoria active" data-categoria="Todas" aria-pressed="true">Todas</button>
+        <button type="button" class="btn-categoria" data-categoria="Hogar" aria-pressed="false">🏡 Hogar</button>
+        <button type="button" class="btn-categoria" data-categoria="Cultivos" aria-pressed="false">🌱 Cultivos</button>
+        <button type="button" class="btn-categoria" data-categoria="Potreros" aria-pressed="false">🌾 Potreros</button>
+        <button type="button" class="btn-categoria" data-categoria="Servicios" aria-pressed="false">⚙️ Servicios</button>
       </div>
 
       <div class="search-box">
-        <input type="text" id="searchInput" placeholder="🔍 Buscar insumos, productos o ingredientes activos..." onkeyup="aplicarFiltros()">
+        <label class="visually-hidden" for="searchInput">Buscar insumos, productos o ingredientes activos</label>
+        <input type="search" id="searchInput" enterkeyhint="search" autocomplete="off"
+               placeholder="🔍 Buscar insumos, productos o ingredientes activos..."
+               aria-describedby="resultadosCatalogo" oninput="aplicarFiltros()">
       </div>
     </div>
   </section>
@@ -236,19 +248,32 @@
   <!-- PRODUCTOS -->
   <section class="productos-section">
     <div class="container">
-      <div id="productosGrid" class="productos-grid">
-        <div class="loading">
-          <div class="spinner"></div>
-          <p>Cargando productos agrícolas...</p>
+      <!-- El buscador no anuncia sus resultados: se filtraba en silencio -->
+      <p id="resultadosCatalogo" class="resultados-catalogo" role="status" aria-live="polite"></p>
+
+      <div id="productosGrid" class="productos-grid"></div>
+
+      <noscript>
+        <div class="catalogo-estado">
+          <p class="catalogo-estado__titulo">El catálogo necesita JavaScript para cargarse.</p>
+          <p class="catalogo-estado__texto">
+            Actívalo y vuelve a cargar la página. Mientras tanto puedes escribirle al ingeniero
+            por WhatsApp al +593 96 351 8696: te indica la fórmula y la dosis según tu cultivo.
+          </p>
+          <div class="catalogo-estado__acciones">
+            <a class="btn-agregar btn-agregar--ancho" style="text-decoration: none;" href="https://wa.me/593963518696?text=%C2%A1Hola!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20asesor%C3%ADa%20t%C3%A9cnica%20para%20mi%20cultivo." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+          </div>
         </div>
-      </div>
+      </noscript>
     </div>
   </section>
 
+  </main>
+
   <!-- MODAL DE DETALLE -->
-  <div id="modalProducto" class="modal-overlay" onclick="cerrarModalFuera(event)">
-    <div class="modal-content">
-      <button class="modal-close" onclick="cerrarModalProducto()">✕</button>
+  <div id="modalProducto" class="modal-overlay" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-label="Ficha técnica">
+      <button type="button" class="modal-close" data-cerrar-modal aria-label="Cerrar ficha técnica">✕</button>
       <div id="modalProductoDetalle">
         <!-- Contenido dinámico JS -->
       </div>
@@ -260,16 +285,16 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h3>CATÁLOGO AGRÍCOLA</h3>
+          <p class="footer-heading">CATÁLOGO AGRÍCOLA</p>
           <p>Atención directa a productores y distribuidores del campo</p>
         </div>
         <div class="footer-section">
-          <h3>Atención al Cliente</h3>
+          <p class="footer-heading">Atención al Cliente</p>
           <p>📍 Balzar, Guayas, Ecuador</p>
           <p>✉️ contacto@cgsdelecuador.com</p>
         </div>
         <div class="footer-section">
-          <h3>Horarios de Atención</h3>
+          <p class="footer-heading">Horarios de Atención</p>
           <p>Lunes a Viernes: 7:30 AM - 5:00 PM</p>
           <p>Sábados: 8:00 AM - 1:00 PM</p>
         </div>
@@ -280,7 +305,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=2.0"></script>
+  <script src="script.js?v=2.1"></script>
 
   <!-- Botón Flotante WhatsApp -->
   <a href="https://wa.me/593963518696?text=%C2%A1Hola!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20asesor%C3%ADa%20t%C3%A9cnica%20para%20mi%20cultivo." 

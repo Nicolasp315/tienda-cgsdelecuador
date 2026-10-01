@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWZJ9JYKYK"></script>
   <script>
@@ -14,8 +16,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+  <!-- Favicon: favicon.ico pesa 1.4 KB contra los 95 KB de logo.jpg -->
+  <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="img/logo.jpg">
 
   <!-- SEO Básico e Indexación -->
@@ -38,13 +40,33 @@
   <meta name="twitter:description" content="Visita Técnica Zamorana y Análisis de Suelos para la agricultura ecuatoriana.">
   <meta name="twitter:image" content="https://cgsdelecuador.com/img/producto-visita-tecnica.jpg">
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2.1">
   <style>
     .header {
       border-bottom: 2px solid rgba(0, 0, 0, 0.6);
     }
 
     /* Layout de servicios en grid vertical */
+    .seccion-servicios {
+      padding: 60px 0 80px 0;
+      background: var(--bg-light);
+      min-height: 75vh;
+    }
+
+    .servicios-titulo {
+      text-align: center;
+      color: var(--primary-dark);
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    .servicios-bajada {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 45px;
+      font-size: 1.05rem;
+    }
+
     .servicios-list {
       display: flex;
       flex-direction: column;
@@ -84,6 +106,20 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      min-width: 0;
+    }
+
+    .servicio-badge {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    /* Era <h3> saltando el nivel desde el <h1> de la pagina */
+    .servicio-nombre {
+      color: #2e7d32;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      font-weight: 700;
     }
 
     /* Responsivo para celulares */
@@ -103,33 +139,35 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
   <!-- HEADER -->
   <header class="header">
     <div class="container">
       <div class="header-content">
         <div class="logo-section">
-          <img src="img/logo.jpg" alt="CGS Del Ecuador Logo" class="logo">
+          <img src="img/logo.jpg" alt="" class="logo">
           <div class="empresa-info">
             <div class="empresa-nombre">CGS DEL ECUADOR</div>
             <p>🌱 Soluciones y Productos para el Campo 🌾</p>
           </div>
         </div>
-        <div class="header-right">
+        <nav class="header-right" aria-label="Principal">
           <a href="index.html" class="nav-link-header">Inicio</a>
           <a href="productos.html" class="nav-link-header">Productos</a>
-          <a href="servicios.html" class="nav-link-header active">Servicios</a>
-        </div>
+          <a href="servicios.html" class="nav-link-header active" aria-current="page">Servicios</a>
+        </nav>
       </div>
     </div>
   </header>
 
   <!-- SECCIÓN PRINCIPAL DE SERVICIOS -->
-  <section style="padding: 60px 0 80px 0; background: var(--bg-light); min-height: 75vh;">
+  <main id="contenido" class="seccion-servicios">
     <div class="container">
-      <h1 style="text-align: center; color: var(--primary-dark); font-size: 2.2rem; margin-bottom: 10px;">
+      <h1 class="servicios-titulo">
         Análisis de Suelo y Visitas Técnicas en Ecuador
       </h1>
-      <p style="text-align: center; color: var(--text-muted); margin-bottom: 45px; font-size: 1.05rem;">
+      <p class="servicios-bajada">
         Diagnóstico y acompañamiento técnico directo para optimizar el rendimiento de tu cultivo
       </p>
 
@@ -142,8 +180,8 @@
           </div>
           <div class="servicio-info-col">
             <div>
-              <span class="producto-categoria" style="display:inline-block; margin-bottom: 10px;">Asesoría en Campo</span>
-              <h3 style="color: #2e7d32; font-size: 1.6rem; margin-bottom: 12px; font-weight: 700;">Visita Técnica Zamorana</h3>
+              <span class="producto-categoria servicio-badge">Asesoría en Campo</span>
+              <h2 class="servicio-nombre">Visita Técnica Zamorana</h2>
               <p style="color: #475569; line-height: 1.6; margin-bottom: 15px; font-size: 0.98rem;">
                 Inspección in situ, diagnóstico nutricional directo en cultivo y diseño de plan de recomendación personalizado a cargo de ingenieros agrónomos.
               </p>
@@ -166,8 +204,8 @@
           </div>
           <div class="servicio-info-col">
             <div>
-              <span class="producto-categoria" style="display:inline-block; margin-bottom: 10px;">Diagnóstico de Suelos</span>
-              <h3 style="color: #2e7d32; font-size: 1.6rem; margin-bottom: 12px; font-weight: 700;">Análisis de Suelo</h3>
+              <span class="producto-categoria servicio-badge">Diagnóstico de Suelos</span>
+              <h2 class="servicio-nombre">Análisis de Suelo</h2>
               <p style="color: #475569; line-height: 1.6; margin-bottom: 15px; font-size: 0.98rem;">
                 Diagnóstico químico y físico completo para determinar los niveles nutricionales exactos de tu terreno y corregir deficiencias con precisión.
               </p>
@@ -185,23 +223,23 @@
 
       </div>
     </div>
-  </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h3>CATÁLOGO AGRÍCOLA</h3>
+          <p class="footer-heading">CATÁLOGO AGRÍCOLA</p>
           <p>Atención directa a productores y distribuidores del campo</p>
         </div>
         <div class="footer-section">
-          <h3>Atención al Cliente</h3>
+          <p class="footer-heading">Atención al Cliente</p>
           <p>📍 Balzar, Guayas, Ecuador</p>
           <p>✉️ contacto@cgsdelecuador.com</p>
         </div>
         <div class="footer-section">
-          <h3>Horarios de Atención</h3>
+          <p class="footer-heading">Horarios de Atención</p>
           <p>Lunes a Viernes: 7:30 AM - 5:00 PM</p>
           <p>Sábados: 8:00 AM - 1:00 PM</p>
         </div>
@@ -212,7 +250,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=2.0"></script>
+  <script src="script.js?v=2.1"></script>
 
   <!-- Botón Flotante WhatsApp -->
   <a href="https://wa.me/593963518696?text=%C2%A1Hola!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20asesor%C3%ADa%20t%C3%A9cnica%20para%20mi%20cultivo." 
