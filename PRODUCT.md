@@ -33,12 +33,29 @@ Entrega a domicilio a todas las provincias por courier certificada, en envases d
 ## Operating Context
 
 - **WhatsApp es el único canal transaccional:** +593 96 351 8696. Cotización, pedido, agendar visita técnica y solicitar análisis de suelo pasan por ahí. No hay carrito, ni pago en línea, ni cuentas de usuario.
-- **No hay precios públicos.** Se cotizan por WhatsApp según fórmula y volumen, y la respuesta incluye la dosis recomendada. Esto es deliberado, no un pendiente.
+- **El precio se publica por envase de 20 L.** Hay un campo `precio` fijo por producto, cargado a mano en `public/productos.json` (ver "Cómo cargar un precio"). Sin precio cargado, la ficha no muestra ningún bloque y todo sigue pasando por WhatsApp. La **dosis** sigue calculándose con cultivo y etapa fenológica, y eso no lo resuelve un precio en la tarjeta.
+- **El IVA no se menciona en el sitio.** Decisión del usuario (2026-10-11): estos productos no generan IVA, así que el precio publicado es el precio final. No lleva "+ IVA", ni "IVA incluido", ni nota al pie, ni `priceSpecification` fiscal. No lo agregues: no hay nada que aclarar y la mención instala una duda donde no la hay.
+- **El precio no se inventa.** Lo carga el usuario con los valores reales de su lista de precios. Sin el dato, `precio` queda en `null` y no se publica nada.
 - **La conversación es con un ingeniero, no con un bot.** Quien cotiza recomienda; quien compra puede pedir justificación técnica.
 - **Envíos por courier certificada** hasta la finca, invernadero o distribuidora del cliente.
 - **Atención:** lunes a viernes 7:30–17:00, sábado 8:00–13:00 (horario de Ecuador continental). Contacto: contacto@cgsdelecuador.com.
 - **El sitio es la puerta de entrada, no el punto de venta.** Su trabajo es convencer y calificar, no transaccionar.
 - El sitio se consulta y se comparte por WhatsApp, y la mayor parte del tráfico llega desde buscador según las queries de SEO declaradas arriba.
+
+### Cómo cargar un precio
+
+En `public/productos.json`, cada entrada tiene un campo `precio`:
+
+```json
+    "presentacion": "20 L",
+    "precio": 38.5,
+```
+
+- `null` o vacío → la ficha **no** muestra ningún bloque de precio, ni un hueco ni un "$0". Es el estado actual de las 9 entradas.
+- Un número (`38.5`) o un texto (`"38,50"`) → la tarjeta muestra `$38,50` junto a la presentación, y la ficha el mismo valor.
+- Se acepta coma o punto como separador decimal, **sin** separador de miles. `0` o un valor no numérico se ignoran igual que vacío.
+
+Un precio cargado se ve en la tarjeta y en la ficha, pero **todavía no entra al JSON-LD** de `productos.html`: el bloque `ItemList` está escrito a mano y no lleva `offers`. Mientras siga así, Google no muestra el precio en el resultado de búsqueda. El generador que reescribe ese bloque es el Sprint 2 del plan.
 
 ## Capabilities and Constraints
 
@@ -56,16 +73,16 @@ Entrega a domicilio a todas las provincias por courier certificada, en envases d
 - Sitio estático: HTML, CSS y JS planos, sin framework ni build step. Se despliega en Vercel con `vercel.json` sirviendo `public/**` como contenido estático.
 - **Idioma único: español.** Todo el copy está en español y el SEO está escrito para búsquedas en Ecuador.
 - El número de WhatsApp está duplicado: constante `TELEFONO_WHATSAPP` en `script.js` y también escrito a mano en el HTML de cada página. Cualquier cambio de número toca varios archivos.
-- Los datos de producto viven en un solo archivo (`productos.json`); las categorías son `Cultivos` (7) y `Servicios` (2). La lista de chips de `productos.html` incluye categorías ("Hogar", "Potreros") que no existen en el JSON y devuelven cero resultados siempre.
-- El buscador de `script.js` indexa solo `nombre`, `descripcionCorta` y `detalleAdicional`; `detalleAdicional` está definido en 0 de las 9 entradas, así que el corpus de composición y uso no es buscable ("NPK", "20 L", "flores", "soja" dan 0) y la búsqueda es sensible a acentos.
+- Los datos de producto viven en un solo archivo (`productos.json`); las categorías son `Cultivos` (7) y `Servicios` (2). **Resuelto 2026-10-11:** los chips "Hogar" y "Potreros" —que no existían en el JSON y devolvían cero resultados siempre— se quitaron de `productos.html`. Quedan Todas / Cultivos / Servicios y cada chip devuelve al menos una entrada.
+- **Resuelto 2026-10-11:** el buscador de `script.js` indexa `nombre`, `categoria`, `descripcionCorta`, `presentacion`, `detalleAdicional` y el `detalleModal` completo (`beneficios`, `composicion`, `uso`), y normaliza acentos (NFD). "NPK", "20 l", "flores", "soja" y "acidos humicos" devuelven resultados. Antes indexaba solo nombre + descripción corta y era sensible a acentos.
 - **Resuelto 2026-10-01 — la presentación es de 20 L, y solo de 20 L.** El usuario decidió que no existe formato de 200 L. Se normalizó `presentacion` a "20 L" en los 7 productos de `Cultivos`, se quitó la mención "y 200 L" del `uso` de PotreroCorplus y FungiCorPlus (las únicas 2 entradas que la tenían, de 9), y se alineó el copy público de `index.html`. **No vuelvas a introducir "200 L" en ningún lado** sin que el usuario lo confirme: ya se eliminó dos veces y no hay dato que lo respalde.
 - No hay imágenes optimizadas: el JPG más pesado (`producto-calciiborcorplus.jpg`) ronda los 275 KB, no hay `srcset` ni `loading="lazy"`, y varias tarjetas usan la misma imagen de producto genérica.
 - No hay analítica de comportamiento más allá de GA4, ni registro de leads, ni forma de medir si un WhatsApp se convirtió en pedido.
 
 **Hechos por registrar, no por asumir**
 
-- **El claim "Certificado" está prohibido y su eliminación está PENDIENTE.** Decisión del usuario (2026-09-26): la prohibición sigue vigente — ningún trabajo futuro debe reintroducir "certificado" ni ninguna palabra que lo sugiera, ni agregar un número de certificado, un estándar (BIO, OCP, SNAP, Registro-Agroecuario) ni un gráfico de sello: no hay nada detrás. Pero las 7 apariciones del claim de producto **siguen en `index.html`**: `<title>` (l.22), `meta description` (l.23), `meta keywords` (l.25), `FAQPage` `name` (l.86) y su `text` (l.89), `<h1>` del hero (l.186) y el `<h3>` visible del FAQ (l.296). Lo que la reemplaza es una afirmación verificable: formulación propia, producida en Balzar (Guayas), con ingenieros graduados de El Zamorano.
-- **"Courier certificada" sí se conserva.** En `index.html:97` la palabra aparece aplicada al servicio de transporte, que sí es un hecho. No confundir con el claim de producto ni eliminarlo al hacer la limpieza anterior.
+- **El claim "Certificado" está prohibido (decisión del usuario, 2026-09-26).** Ningún trabajo futuro debe reintroducir "certificado" ni una palabra que lo sugiera, ni un número de certificado, un estándar (BIO, OCP, SNAP, Registro-Agroecuario) ni un gráfico de sello: no hay nada detrás. **Resuelto 2026-09-26:** las 7 apariciones en `index.html` se borraron y en su lugar va una afirmación verificable (formulación propia, producida en Balzar, Guayas, con ingenieros graduados de El Zamorano). Verificado 2026-10-11 en las 4 páginas: solo quedan 2 ocurrencias de la raíz `certificad`, y ambas están dentro de la frase `"courier certificada"`.
+- **"Courier certificada" sí se conserva.** Aparece 2 veces en `index.html` (el `FAQPage` y el `<p>` visible del FAQ de entregas, que son el mismo texto sincronizado byte a byte), aplicada al servicio de transporte, que sí es un hecho. No confundir con el claim de producto ni eliminarlo.
 - El número de WhatsApp es **+593 96 351 8696** (`593963518696` en `script.js:1`) y es consistente en `script.js:1`, los dos bloques JSON-LD y los seis `wa.me` hrefs. No hay drift hoy, pero está escrito a mano en los cuatro HTML.
 - `AGENTS.md` menciona una página **"Nosotros"** planificada: no está construida y ninguna página del sitio la enlaza ni la promete.
 - `AGENTS.md` también describe un snapshot de critique del 2026-09-26 con una cola de trabajo P0/P1 abierta. Es hoja de ruta de trabajo, no producto: no la conviertas en una fuente de restricciones nuevas.

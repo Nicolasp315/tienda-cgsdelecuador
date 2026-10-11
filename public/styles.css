@@ -387,6 +387,26 @@ body {
   flex-grow: 1;
 }
 
+/* PRECIO (opcional)
+   El bloque aparece solo si el producto trae `precio` cargado en
+   productos.json. Sin precio no queda ni un hueco ni un "$0": la tarjeta se ve
+   exactamente como antes. Cómo cargarlo: PRODUCT.md. */
+.producto-precio {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.producto-precio__valor {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  /* #1b5e20 sobre blanco: 7.87:1, por encima del 4.5:1 de AA. */
+  color: var(--primary-dark);
+}
+
 .producto-footer {
   display: flex;
   justify-content: space-between;

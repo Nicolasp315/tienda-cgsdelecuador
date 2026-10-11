@@ -5,6 +5,7 @@
     "categoria": "Servicios",
     "descripcionCorta": "Visita técnica especializada",
     "presentacion": "",
+    "precio": null,
     "imagen": "img/producto-visita-tecnica.jpg",
     "detalleModal": {
       "beneficios": "Diagnóstico profesional in situ, identificación temprana de deficiencias nutricionales y optimización de tu plan de fertilización.",
@@ -18,6 +19,7 @@
     "categoria": "Servicios",
     "descripcionCorta": "Diagnóstico químico y físico completo de terreno",
     "presentacion": "",
+    "precio": null,
     "imagen": "img/servicio-analisis-suelo.jpg",
     "detalleModal": {
       "beneficios": "Permite conocer exactamente qué nutrientes le faltan a tu suelo para evitar sobrecostos en fertilizantes innecesarios.",
@@ -31,6 +33,7 @@
     "categoria": "Cultivos",
     "descripcionCorta": "Fórmula especial de Inicio",
     "presentacion": "20 L",
+    "precio": null,
     "imagen": "img/producto-bioscorplus.jpg",
     "detalleModal": {
       "beneficios": "Promueve la formación intensiva de raicillas nuevas, mejora el enraizamiento post-trasplante y prepara la planta para una absorción eficiente de nutrientes.",
@@ -44,6 +47,7 @@
     "categoria": "Cultivos",
     "descripcionCorta": "Fórmula especial para Acondicionar suelo y Raíces",
     "presentacion": "20 L",
+    "precio": null,
     "imagen": "img/producto-humicorplus.jpg",
     "detalleModal": {
       "beneficios": "Descompacta el suelo, incrementa la capacidad de retención de humedad y maximiza la disponibilidad biológica de los fertilizantes.",
@@ -57,6 +61,7 @@
     "categoria": "Cultivos",
     "descripcionCorta": "Fórmula especial de Desarrollo",
     "presentacion": "20 L",
+    "precio": null,
     "imagen": "img/producto-algascorplus.jpg",
     "detalleModal": {
       "beneficios": "Supera situaciones de estrés hídrico o térmico, activa el crecimiento foliar y potencia la floración y el cuajado de frutos.",
@@ -70,6 +75,7 @@
   "categoria": "Cultivos",
   "descripcionCorta": "Fuente líquida de calcio nitratado",
   "presentacion": "20 L",
+  "precio": null,
   "imagen": "img/producto-calciocorplus.jpg",
   "detalleModal": {
     "beneficios": "Aumenta el rendimiento y la firmeza del fruto, mejora la vida postcosecha y fortalece la resistencia celular de la planta frente a enfermedades.",
@@ -83,6 +89,7 @@
   "categoria": "Cultivos",
   "descripcionCorta": "Fórmula Especial de Bioestimulante",
   "presentacion": "20 L",
+  "precio": null,
   "imagen": "img/producto-poterocorplus.jpg",
   "detalleModal": {
     "beneficios": "Impulsa el desarrollo vegetativo, el sistema radicular y la absorción de nutrientes. Eleva la resistencia al estrés biótico y abiótico, la productividad y la actividad microbiana del suelo.",
@@ -96,6 +103,7 @@
   "categoria": "Cultivos",
   "descripcionCorta": "Fórmula especial de Calcio y Boro",
   "presentacion": "20 L",
+  "precio": null,
   "imagen": "img/producto-calciiborcorplus.jpg",
   "detalleModal": {
     "beneficios": "Calcio, Boro, Nitrógeno y micronutrientes con eficiencia superior a fuentes convencionales. Disminuye el aborto de flores y aumenta el número de vainas. Aditivos bio-efectivos para absorción de nutrientes. Compatible con la gran mayoría de fitosanitarios.",
@@ -109,6 +117,7 @@
   "categoria": "Cultivos",
   "descripcionCorta": "Fórmula Especial de Bioestimulante",
   "presentacion": "20 L",
+  "precio": null,
   "imagen": "img/producto-fungicorplus.jpg",
   "detalleModal": {
     "beneficios": "Impulsa el desarrollo vegetativo, el sistema radicular y la absorción de nutrientes. Eleva la resistencia al estrés biótico y abiótico y la productividad. 100% natural, con nula toxicidad en mamíferos y nula fitotoxicidad.",
