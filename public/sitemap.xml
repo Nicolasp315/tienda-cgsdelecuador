@@ -3,29 +3,31 @@
 
   <!-- lastmod = fecha del último commit que tocó cada archivo, obtenida con
        git log. changefreq y priority se quitaron: Google los ignora desde 2023. -->
+  <!-- Actualizado 2026-10-11: ese día cambiaron las 4 páginas (metadatos, JSON-LD
+       de servicios, FAQPage de la guía, cache-buster de CSS/JS). -->
 
   <!-- Página Principal (Home) -->
   <url>
     <loc>https://cgsdelecuador.com/</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-11</lastmod>
   </url>
 
   <!-- Catálogo de Productos -->
   <url>
     <loc>https://cgsdelecuador.com/productos.html</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-11</lastmod>
   </url>
 
   <!-- Servicios (Visita Técnica y Análisis) -->
   <url>
     <loc>https://cgsdelecuador.com/servicios.html</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-11</lastmod>
   </url>
 
   <!-- Guía de Abono Orgánico Bioestimulante y Nutrición Vegetal -->
   <url>
     <loc>https://cgsdelecuador.com/bioestimulantes.html</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-11</lastmod>
   </url>
 
 </urlset>
