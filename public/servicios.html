@@ -29,6 +29,8 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_EC">
+  <meta property="og:site_name" content="CGS Del Ecuador">
   <meta property="og:url" content="https://cgsdelecuador.com/servicios.html">
   <meta property="og:title" content="Servicios Especializados de Diagnóstico Agrícola | CGS Del Ecuador">
   <meta property="og:description" content="Asesoría técnica Zamorana e interpretación de análisis de suelo para la aplicación eficiente de abono orgánico bioestimulante.">
@@ -136,6 +138,40 @@
       }
     }
   </style>
+
+  <!-- Datos Estructurados: Servicios
+       Antes esta página no tenía ningún bloque JSON-LD, así que dos de las
+       queries declaradas en PRODUCT.md ("análisis de suelo", "visita técnica
+       agronómica") no tenían entidad que las respaldara. El provider apunta al
+       @id de la organización, declarada completa en index.html. Los textos son
+       los que ya están visibles en esta página y en productos.json: nada nuevo. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://cgsdelecuador.com/servicios.html#visita-tecnica",
+        "name": "Visita Técnica Zamorana",
+        "serviceType": "Asesoría en Campo",
+        "description": "Inspección in situ, diagnóstico nutricional directo en cultivo y diseño de plan de recomendación personalizado a cargo de ingenieros agrónomos.",
+        "provider": { "@id": "https://cgsdelecuador.com/#organizacion" },
+        "areaServed": { "@type": "Country", "name": "Ecuador" },
+        "image": "https://cgsdelecuador.com/img/producto-visita-tecnica.jpg"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://cgsdelecuador.com/servicios.html#analisis-de-suelo",
+        "name": "Análisis de Suelo",
+        "serviceType": "Diagnóstico de Suelos",
+        "description": "Evaluación química (pH, materia orgánica, N, P, K, microelementos) y recomendaciones de enmienda, con guía técnica para la toma y el envío correcto de muestras.",
+        "provider": { "@id": "https://cgsdelecuador.com/#organizacion" },
+        "areaServed": { "@type": "Country", "name": "Ecuador" },
+        "image": "https://cgsdelecuador.com/img/servicio-analisis-suelo.jpg"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 

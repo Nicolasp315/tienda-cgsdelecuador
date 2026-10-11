@@ -31,6 +31,8 @@
 
   <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_EC">
+  <meta property="og:site_name" content="CGS Del Ecuador">
   <meta property="og:url" content="https://cgsdelecuador.com/productos.html">
   <meta property="og:title" content="Catálogo de Productos y Abono Orgánico Bioestimulante | CGS Del Ecuador">
   <meta property="og:description" content="Explora nuestro catálogo técnico de abono orgánico bioestimulante y fertilizantes agrícolas formulados para optimizar el rendimiento del campo.">
@@ -61,6 +63,7 @@
     "url": "https://cgsdelecuador.com/productos.html",
     "publisher": {
       "@type": "AgriculturalBusiness",
+      "@id": "https://cgsdelecuador.com/#organizacion",
       "name": "CGS Del Ecuador",
       "logo": "https://cgsdelecuador.com/img/logo.jpg"
     }
@@ -229,10 +232,12 @@
   <section class="filters-section">
     <div class="container">
       <div class="categorias-container" role="group" aria-label="Filtrar por categoría">
+        <!-- Solo las categorías que existen en productos.json: Cultivos (7) y
+             Servicios (2). "Hogar" y "Potreros" no existen en el JSON, así que
+             devolvían 0 resultados siempre: un callejón sin salida en el filtro
+             principal. AGENTS.md regla 7: no inventar taxonomías. -->
         <button type="button" class="btn-categoria active" data-categoria="Todas" aria-pressed="true">Todas</button>
-        <button type="button" class="btn-categoria" data-categoria="Hogar" aria-pressed="false">🏡 Hogar</button>
         <button type="button" class="btn-categoria" data-categoria="Cultivos" aria-pressed="false">🌱 Cultivos</button>
-        <button type="button" class="btn-categoria" data-categoria="Potreros" aria-pressed="false">🌾 Potreros</button>
         <button type="button" class="btn-categoria" data-categoria="Servicios" aria-pressed="false">⚙️ Servicios</button>
       </div>
 

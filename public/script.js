@@ -479,14 +479,42 @@ function filtrarCategoria(cat, boton) {
   aplicarFiltros();
 }
 
+/* Normaliza para buscar: minúsculas y sin acentos. "Ácidos Húmicos" tiene que
+   coincidir con "acidos humicos". NFD separa la letra de su tilde y el rango
+   U+0300–U+036F borra los diacríticos que quedan sueltos. */
+function normalizarTexto(valor) {
+  return String(valor === undefined || valor === null ? '' : valor)
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}
+
+/* Corpus de búsqueda de un producto. El campo promete "insumos, productos o
+   ingredientes activos", así que la composición y la dosis tienen que estar
+   adentro: con solo nombre + descripción corta, "NPK", "g/l", "soja" y "flores"
+   devolvían cero. detalleAdicional se conserva porque lo usa el render. */
+function textoBuscable(producto) {
+  const detalles = producto.detalleModal || {};
+  return normalizarTexto(
+    [
+      producto.nombre,
+      producto.categoria,
+      producto.descripcionCorta,
+      producto.presentacion,
+      producto.detalleAdicional,
+      detalles.beneficios,
+      detalles.composicion,
+      detalles.uso,
+    ].join(' ')
+  );
+}
+
 function aplicarFiltros() {
-  const busqueda = (document.getElementById('searchInput')?.value || '').toLowerCase();
+  const busqueda = normalizarTexto(document.getElementById('searchInput')?.value || '').trim();
 
   const filtrados = productosGlobales.filter((prod) => {
     const coincideCat = categoriaActual === 'Todas' || prod.categoria === categoriaActual;
-    const textoBuscar =
-      `${prod.nombre} ${prod.descripcionCorta || ''} ${prod.detalleAdicional || ''}`.toLowerCase();
-    return coincideCat && textoBuscar.includes(busqueda);
+    return coincideCat && textoBuscable(prod).includes(busqueda);
   });
 
   mostrarProductos(filtrados);
