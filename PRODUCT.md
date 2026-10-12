@@ -44,7 +44,9 @@ Entrega a domicilio a todas las provincias por courier certificada, en envases d
 
 ### Cómo cargar un precio
 
-En `public/productos.json`, cada entrada tiene un campo `precio`:
+**Son dos pasos.** El segundo es un comando; si te lo olvidás, la página muestra el precio pero Google sigue sin verlo (y Google penaliza un `offers` que la página no muestra, así que tampoco sirve marcarlo antes).
+
+**1. Cargá el número en `public/productos.json`.** Cada entrada tiene el campo `precio`:
 
 ```json
     "presentacion": "20 L",
@@ -55,7 +57,21 @@ En `public/productos.json`, cada entrada tiene un campo `precio`:
 - Un número (`38.5`) o un texto (`"38,50"`) → la tarjeta muestra `$38,50` junto a la presentación, y la ficha el mismo valor.
 - Se acepta coma o punto como separador decimal, **sin** separador de miles. `0` o un valor no numérico se ignoran igual que vacío.
 
-Un precio cargado se ve en la tarjeta y en la ficha, pero **todavía no entra al JSON-LD** de `productos.html`: el bloque `ItemList` está escrito a mano y no lleva `offers`. Mientras siga así, Google no muestra el precio en el resultado de búsqueda. El generador que reescribe ese bloque es el Sprint 2 del plan.
+**2. Corré el generador**, desde la raíz del repo:
+
+```bash
+python scripts/actualizar-itemlist.py
+```
+
+Escribe el campo `offers` de cada producto en el bloque `ItemList` de `public/productos.html`. Es idempotente: sin precios nuevos no toca nada. `--check` no escribe y sale con código 1 si hay cambios pendientes. El script **solo** administra `offers` — los nombres, descripciones, imágenes, marcas y categorías de ese bloque están escritos a mano y el script aborta si detecta que tocó algo más.
+
+```bash
+python scripts/actualizar-itemlist.py --check   # ¿está al día? (código 1 = no)
+```
+
+Así el precio que Google lee sale del mismo campo que el precio que ve el visitante: no pueden desincronizarse. Verificado sirviendo por HTTP que, con 3 precios cargados, el `offers` del JSON-LD coincide con el número pintado en las 7 tarjetas.
+
+**Lo que el `offers` NO declara, a propósito** (haría falta inventar un dato): `priceValidUntil` (necesita una fecha de vigencia que el negocio no definió), `availability` (afirmaría stock, y no hay sistema de stock), `url`, `itemCondition` y `sku` (no hay página de producto ni SKU comercial). Google no los exige para un Product snippet; solo los recomienda.
 
 ## Capabilities and Constraints
 
