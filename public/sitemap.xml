@@ -4,7 +4,8 @@
   <!-- lastmod = fecha del último commit que tocó cada archivo, obtenida con
        git log. changefreq y priority se quitaron: Google los ignora desde 2023. -->
   <!-- Actualizado 2026-10-11: ese día cambiaron las 4 páginas (metadatos, JSON-LD
-       de servicios, FAQPage de la guía, cache-buster de CSS/JS). -->
+       de servicios, FAQPage de la guía, cache-buster de CSS/JS).
+       Actualizado 2026-10-12: solo productos.html (bloque ItemList generado). -->
 
   <!-- Página Principal (Home) -->
   <url>
@@ -15,7 +16,7 @@
   <!-- Catálogo de Productos -->
   <url>
     <loc>https://cgsdelecuador.com/productos.html</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-10-12</lastmod>
   </url>
 
   <!-- Servicios (Visita Técnica y Análisis) -->
