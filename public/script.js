@@ -243,7 +243,12 @@ function formatearPrecio(valor) {
 
 /* Bloque de precio: valor + unidad. La unidad se omite en la ficha técnica,
    donde la presentación ya figura en la línea de arriba; repetirla dos veces
-   no agrega información. */
+   no agrega información.
+
+   El nodo de texto en blanco entre valor y unidad no se ve —el `gap` de 6px ya
+   los separa— pero sí queda en el textContent. Sin él, un lector de pantalla
+   anunciaría "$38,50por 20 L" de corrido. En un contenedor flex, un nodo que
+   solo tiene espacios no se renderiza, así que el layout no cambia. */
 function crearBloquePrecio(producto, mostrarUnidad) {
   const valor = formatearPrecio(producto.precio);
   if (!valor) return null;
@@ -260,7 +265,7 @@ function crearBloquePrecio(producto, mostrarUnidad) {
     const unidad = document.createElement('span');
     unidad.className = 'producto-unidad';
     unidad.textContent = `por ${producto.presentacion}`;
-    caja.append(unidad);
+    caja.append(document.createTextNode(' '), unidad);
   }
   return caja;
 }
