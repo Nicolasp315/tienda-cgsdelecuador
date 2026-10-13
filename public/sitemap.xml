@@ -7,7 +7,10 @@
        de servicios, FAQPage de la guía, cache-buster de CSS/JS).
        Actualizado 2026-10-12: las 4 otra vez. productos.html por el bloque
        ItemList generado y el arreglo de accesibilidad del precio de la tarjeta;
-       las otras tres por el cache-buster de script.js. -->
+       las otras tres por el cache-buster de script.js.
+       Actualizado 2026-10-13: solo productos.html (precios cargados y sus
+       offers en el bloque generado). Ojo: la fecha de acá es la del commit,
+       no la de hoy. -->
 
   <!-- Página Principal (Home) -->
   <url>
@@ -18,7 +21,7 @@
   <!-- Catálogo de Productos -->
   <url>
     <loc>https://cgsdelecuador.com/productos.html</loc>
-    <lastmod>2026-10-12</lastmod>
+    <lastmod>2026-10-13</lastmod>
   </url>
 
   <!-- Servicios (Visita Técnica y Análisis) -->
