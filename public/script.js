@@ -6,6 +6,10 @@
    llega de ahí se inserta como TEXT CONTENT (nunca como HTML), y cada tarjeta
    se enlaza con el objeto de producto que la originó, no con un índice: un
    índice es una posición, no una identidad, y se rompe en cuanto se filtra.
+
+   El precio es opcional. Si `precio` viene en null o vacío, no se pinta ningún
+   bloque: ni un hueco, ni un "$0", ni un "a cotizar" repetido en nueve fichas.
+   El campo lo carga a mano el usuario en productos.json (ver PRODUCT.md).
    ========================================================================== */
 
 const TELEFONO_WHATSAPP = '593963518696';
@@ -223,6 +227,49 @@ function crearImagenProducto(producto, clase) {
   return imagen;
 }
 
+/* Precio cargado a mano en productos.json -> formato local ($38,50).
+   Acepta número (38.5) o texto ("38,50"). Devuelve '' si no hay un precio
+   válido, y quien llama simplemente no pinta nada. */
+function formatearPrecio(valor) {
+  if (valor === null || valor === undefined || valor === '') return '';
+  const numero = typeof valor === 'number'
+    ? valor
+    : Number(String(valor).trim().replace(',', '.'));
+  if (!Number.isFinite(numero) || numero <= 0) return '';
+  const [entero, decimales] = numero.toFixed(2).split('.');
+  const conMiles = entero.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  return `$${conMiles},${decimales}`;
+}
+
+/* Bloque de precio: valor + unidad. La unidad se omite en la ficha técnica,
+   donde la presentación ya figura en la línea de arriba; repetirla dos veces
+   no agrega información.
+
+   El nodo de texto en blanco entre valor y unidad no se ve —el `gap` de 6px ya
+   los separa— pero sí queda en el textContent. Sin él, un lector de pantalla
+   anunciaría "$38,50por 20 L" de corrido. En un contenedor flex, un nodo que
+   solo tiene espacios no se renderiza, así que el layout no cambia. */
+function crearBloquePrecio(producto, mostrarUnidad) {
+  const valor = formatearPrecio(producto.precio);
+  if (!valor) return null;
+
+  const caja = document.createElement('p');
+  caja.className = 'producto-precio';
+
+  const fuerte = document.createElement('strong');
+  fuerte.className = 'producto-precio__valor';
+  fuerte.textContent = valor;
+  caja.append(fuerte);
+
+  if (mostrarUnidad && producto.presentacion) {
+    const unidad = document.createElement('span');
+    unidad.className = 'producto-unidad';
+    unidad.textContent = `por ${producto.presentacion}`;
+    caja.append(document.createTextNode(' '), unidad);
+  }
+  return caja;
+}
+
 function construirTarjeta(producto) {
   const tarjeta = document.createElement('div');
   tarjeta.className = 'producto-card';
@@ -262,7 +309,15 @@ function construirTarjeta(producto) {
   boton.dataset.detalle = claveDe(producto);
 
   pie.append(boton);
-  info.append(categoria, nombre, descripcion, pie);
+
+  info.append(categoria, nombre, descripcion);
+  /* El precio va entre la descripción y el botón. La descripción tiene
+     flex-grow: 1, así que sin precio el bloque queda pegado al botón, igual
+     que antes. */
+  const precio = crearBloquePrecio(producto, true);
+  if (precio) info.append(precio);
+  info.append(pie);
+
   tarjeta.append(crearImagenProducto(producto, 'producto-imagen'), info);
   return tarjeta;
 }
@@ -385,6 +440,10 @@ function abrirDetalleProducto(producto, elementoInvocador) {
   if (producto.presentacion) {
     contenedor.append(crearParrafoFicha('Presentación disponible', producto.presentacion, 'ficha-presentacion'));
   }
+  /* Precio de la ficha, sin unidad repetida: la línea de arriba ya dice la
+     presentación. Si el producto no trae precio, no se agrega nada. */
+  const precioFicha = crearBloquePrecio(producto, false);
+  if (precioFicha) contenedor.append(precioFicha);
   contenedor.append(separador, cuerpo, cta);
 
   panel.setAttribute('aria-labelledby', titulo.id);
@@ -479,14 +538,42 @@ function filtrarCategoria(cat, boton) {
   aplicarFiltros();
 }
 
+/* Normaliza para buscar: minúsculas y sin acentos. "Ácidos Húmicos" tiene que
+   coincidir con "acidos humicos". NFD separa la letra de su tilde y el rango
+   U+0300–U+036F borra los diacríticos que quedan sueltos. */
+function normalizarTexto(valor) {
+  return String(valor === undefined || valor === null ? '' : valor)
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+}
+
+/* Corpus de búsqueda de un producto. El campo promete "insumos, productos o
+   ingredientes activos", así que la composición y la dosis tienen que estar
+   adentro: con solo nombre + descripción corta, "NPK", "g/l", "soja" y "flores"
+   devolvían cero. detalleAdicional se conserva porque lo usa el render. */
+function textoBuscable(producto) {
+  const detalles = producto.detalleModal || {};
+  return normalizarTexto(
+    [
+      producto.nombre,
+      producto.categoria,
+      producto.descripcionCorta,
+      producto.presentacion,
+      producto.detalleAdicional,
+      detalles.beneficios,
+      detalles.composicion,
+      detalles.uso,
+    ].join(' ')
+  );
+}
+
 function aplicarFiltros() {
-  const busqueda = (document.getElementById('searchInput')?.value || '').toLowerCase();
+  const busqueda = normalizarTexto(document.getElementById('searchInput')?.value || '').trim();
 
   const filtrados = productosGlobales.filter((prod) => {
     const coincideCat = categoriaActual === 'Todas' || prod.categoria === categoriaActual;
-    const textoBuscar =
-      `${prod.nombre} ${prod.descripcionCorta || ''} ${prod.detalleAdicional || ''}`.toLowerCase();
-    return coincideCat && textoBuscar.includes(busqueda);
+    return coincideCat && textoBuscable(prod).includes(busqueda);
   });
 
   mostrarProductos(filtrados);

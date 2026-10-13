@@ -1,36 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
+
+  <!-- lastmod = fecha del último commit que tocó cada archivo, obtenida con
+       git log. changefreq y priority se quitaron: Google los ignora desde 2023. -->
+  <!-- Actualizado 2026-10-11: ese día cambiaron las 4 páginas (metadatos, JSON-LD
+       de servicios, FAQPage de la guía, cache-buster de CSS/JS).
+       Actualizado 2026-10-12: las 4 otra vez. productos.html por el bloque
+       ItemList generado y el arreglo de accesibilidad del precio de la tarjeta;
+       las otras tres por el cache-buster de script.js.
+       Actualizado 2026-10-13: solo productos.html (precios cargados y sus
+       offers en el bloque generado). Ojo: la fecha de acá es la del commit,
+       no la de hoy. -->
+
   <!-- Página Principal (Home) -->
   <url>
     <loc>https://cgsdelecuador.com/</loc>
-    <lastmod>2026-09-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-10-12</lastmod>
   </url>
 
   <!-- Catálogo de Productos -->
   <url>
     <loc>https://cgsdelecuador.com/productos.html</loc>
-    <lastmod>2026-09-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-10-13</lastmod>
   </url>
 
   <!-- Servicios (Visita Técnica y Análisis) -->
   <url>
     <loc>https://cgsdelecuador.com/servicios.html</loc>
-    <lastmod>2026-09-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-10-12</lastmod>
   </url>
 
-  <!-- Landing de Bioestimulantes Agrícolas -->
+  <!-- Guía de Abono Orgánico Bioestimulante y Nutrición Vegetal -->
   <url>
     <loc>https://cgsdelecuador.com/bioestimulantes.html</loc>
-    <lastmod>2026-09-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-10-12</lastmod>
   </url>
 
 </urlset>
